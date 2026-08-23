@@ -24,6 +24,41 @@ npx prettier --write "src/**/*.{js,jsx}"
 | Audio | Web Speech API (TTS + speech recognition), Web Audio for game sounds |
 | Storage | `localStorage` via `src/lib/storage.js` |
 
+## Deployment
+
+Pushing to `main` builds the app and publishes it to GitHub Pages.
+
+| Workflow | Trigger | Does |
+|---|---|---|
+| `.github/workflows/ci.yml` | pushes to `main`, all PRs, manual | `npm ci` → format check → lint → build |
+| `.github/workflows/deploy.yml` | pushes to `main`, manual | builds with the Pages base path, uploads the artifact, deploys |
+
+**One-time setup:** in the repo, go to **Settings → Pages → Build and deployment**
+and set **Source** to **GitHub Actions**. Then push to `main` (or run the deploy
+workflow manually from the Actions tab). The site lands at
+`https://<owner>.github.io/<repo>/`.
+
+### How the base path works
+
+A Pages project site is served from `/<repo>/`, not the domain root, so:
+
+- `actions/configure-pages` reports the path, and the workflow passes it to the
+  build as `VITE_BASE`; `vite.config.js` falls back to `/` for local dev and for
+  user/org sites served from the root.
+- `BrowserRouter` takes its `basename` from `import.meta.env.BASE_URL`, so routes
+  resolve correctly under the subpath.
+- Pages has no SPA rewrite rule, so a build-time plugin writes `dist/404.html` as a
+  copy of `index.html`. A deep link like `/activities/peekaboo` is handed back to
+  the app, which then routes it client-side. The plugin also drops a `.nojekyll`
+  file.
+
+To reproduce a Pages build locally:
+
+```bash
+VITE_BASE=/kidspace-web/ npm run build
+VITE_BASE=/kidspace-web/ npm run preview   # http://localhost:4173/kidspace-web/
+```
+
 ## Design
 
 The app has its own identity rather than mirroring the reference site's.
