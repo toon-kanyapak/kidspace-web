@@ -1,0 +1,134 @@
+@import "tailwindcss";
+
+@theme {
+  /* Handwritten display + a clean Thai text face — deliberately not a neutral geometric sans */
+  --font-display: "Mali", "Baloo 2", ui-rounded, system-ui, sans-serif;
+  --font-sans: "IBM Plex Sans Thai", "Noto Sans Thai", ui-sans-serif, system-ui, sans-serif;
+
+  /* --- Pink pastel accent ramp --- */
+  --color-brand-50: #fff5f8;
+  --color-brand-100: #ffe6ec;
+  --color-brand-200: #ffd0dc;
+  --color-brand-300: #ffb0c6;
+  --color-brand-400: #fb8ead;
+  --color-brand-500: #ef6f96;
+  --color-brand-600: #d9557f;
+  --color-brand-700: #b34164;
+  --color-brand-800: #8c3350;
+  --color-brand-900: #6b2740;
+
+  /* --- Warm paper surfaces --- */
+  --color-paper: #fffaf6;
+  --color-cream: #fdf0e9;
+  --color-surface: #ffffff;
+  --color-edge: #f0d9d1;
+  --color-edge-strong: #e2bcae;
+
+  /* --- Warm ink --- */
+  --color-ink-900: #3d2a33;
+  --color-ink-700: #634854;
+  --color-ink-500: #8d7280;
+  --color-ink-300: #bfa8b4;
+
+  /* --- Craft accent pastels --- */
+  --color-clay: #ffe0cd;
+  --color-clay-ink: #c46b3c;
+  --color-sage: #dcecd0;
+  --color-sage-ink: #55803f;
+  --color-sky: #d7e6f8;
+  --color-sky-ink: #3f6fa8;
+  --color-butter: #ffeab6;
+  --color-butter-ink: #a37b23;
+  --color-lilac: #e8dbf8;
+  --color-lilac-ink: #7452a6;
+  --color-blush: #ffdde7;
+  --color-blush-ink: #b34164;
+}
+
+:root {
+  color-scheme: light;
+}
+
+html, body, #root { min-height: 100%; }
+
+body {
+  margin: 0;
+  font-family: var(--font-sans);
+  color: var(--color-ink-900);
+  background-color: var(--color-paper);
+  /* faint craft-paper dot grid */
+  background-image:
+    radial-gradient(circle at 1px 1px, rgba(179, 65, 100, .075) 1px, transparent 0);
+  background-size: 22px 22px;
+  -webkit-font-smoothing: antialiased;
+  -webkit-tap-highlight-color: transparent;
+}
+
+h1, h2, h3, .font-display { font-family: var(--font-display); }
+
+/* ---------------------------------------------------------------
+   Shape language: cut-paper cards with an inked edge and a hard,
+   slightly offset shadow — no glassy blur, no centred soft shadow.
+   --------------------------------------------------------------- */
+.paper {
+  background: var(--color-surface);
+  border: 1.5px solid var(--color-edge);
+  box-shadow: 3px 4px 0 rgba(107, 39, 64, .05);
+}
+.paper-lift { box-shadow: 5px 7px 0 rgba(107, 39, 64, .07); }
+.paper-flat { box-shadow: none; }
+
+/* Signature asymmetric radius — used on icon chips and feature panels */
+.petal { border-radius: 26px 9px 26px 9px; }
+.petal-alt { border-radius: 9px 26px 9px 26px; }
+
+/* A strip of washi tape for pinned/feature cards */
+.tape::before {
+  content: "";
+  position: absolute;
+  top: -9px;
+  left: 50%;
+  width: 92px;
+  height: 20px;
+  transform: translateX(-50%) rotate(-2.5deg);
+  background: repeating-linear-gradient(45deg, rgba(255,176,198,.62) 0 7px, rgba(255,214,226,.62) 7px 14px);
+  border-radius: 2px;
+}
+
+/* Full-bleed horizontal scrollers inside the padded content column */
+.bleed { margin-inline: -1.25rem; padding-inline: 1.25rem; }
+@media (min-width: 1024px) { .bleed { margin-inline: -2.5rem; padding-inline: 2.5rem; } }
+
+.no-scrollbar::-webkit-scrollbar { display: none; }
+.no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
+
+/* Slight, hand-placed rotation for sticker-ish elements */
+.tilt-l { transform: rotate(-1.6deg); }
+.tilt-r { transform: rotate(1.6deg); }
+
+@keyframes ks-pop   { 0% { transform: scale(.86); opacity: 0 } 60% { transform: scale(1.04); opacity: 1 } 100% { transform: scale(1); opacity: 1 } }
+@keyframes ks-rise  { from { transform: translateY(10px); opacity: 0 } to { transform: translateY(0); opacity: 1 } }
+@keyframes ks-shake { 0%,100% { transform: translateX(0) } 25% { transform: translateX(-6px) } 75% { transform: translateX(6px) } }
+@keyframes ks-bob   { 0%,100% { transform: translateY(0) rotate(-1deg) } 50% { transform: translateY(-7px) rotate(1deg) } }
+@keyframes ks-draw  { from { stroke-dashoffset: 120 } to { stroke-dashoffset: 0 } }
+
+.animate-pop   { animation: ks-pop .32s cubic-bezier(.34,1.56,.64,1) both }
+.animate-rise  { animation: ks-rise .34s ease-out both }
+.animate-shake { animation: ks-shake .34s ease-in-out both }
+.animate-bob   { animation: ks-bob 3.4s ease-in-out infinite }
+
+/* Pressable affordance: the card sinks onto its own shadow */
+.press { transition: transform .12s ease, box-shadow .12s ease }
+.press:active { transform: translate(2px, 3px); box-shadow: 0 0 0 rgba(0,0,0,0) }
+
+.swash path { stroke-dasharray: 120; animation: ks-draw .7s ease-out both }
+
+*:focus-visible {
+  outline: 2.5px solid var(--color-brand-500);
+  outline-offset: 2px;
+  border-radius: 6px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after { animation-duration: .001ms !important; transition-duration: .001ms !important; }
+}
