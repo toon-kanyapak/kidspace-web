@@ -28,10 +28,13 @@ npx prettier --write "src/**/*.{js,jsx}"
 
 Pushing to `main` builds the app and publishes it to GitHub Pages.
 
-| Workflow | Trigger | Does |
+| Job | Runs on | Does |
 |---|---|---|
-| `.github/workflows/ci.yml` | pushes to `main`, all PRs, manual | `npm ci` → format check → lint → build |
-| `.github/workflows/deploy.yml` | pushes to `main`, manual | builds with the Pages base path, uploads the artifact, deploys |
+| `build` | pushes to `main`, all PRs, manual | `npm ci` → format check → lint → build; on non-PR runs it also resolves the Pages base path and uploads the artifact |
+| `deploy` | pushes to `main`, manual — only if `build` passed | publishes the artifact to GitHub Pages |
+
+Both live in `.github/workflows/ci.yml`. Deployment is gated on the checks: a
+push that fails formatting, lint, or the build never reaches Pages.
 
 **One-time setup:** in the repo, go to **Settings → Pages → Build and deployment**
 and set **Source** to **GitHub Actions**. Then push to `main` (or run the deploy
