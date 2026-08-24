@@ -5,9 +5,9 @@ import { load, save } from '../lib/storage'
 import { useApp } from '../store/AppContext'
 
 const SIZES = [
-  { n: 3, th: 'ง่าย' },
-  { n: 4, th: 'ปานกลาง' },
-  { n: 5, th: 'ยาก' },
+  { n: 3, th: 'ง่าย', en: 'Easy' },
+  { n: 4, th: 'ปานกลาง', en: 'Medium' },
+  { n: 5, th: 'ยาก', en: 'Hard' },
 ]
 const shuffle = (a) => [...a].sort(() => Math.random() - 0.5)
 
@@ -112,7 +112,7 @@ export default function StarGrid() {
               sfx('tap')
             }}
           >
-            {s.th} {s.n}×{s.n}
+            {t(s.th, s.en)} {s.n}×{s.n}
           </Chip>
         ))}
         <span className="ml-auto rounded-full bg-surface px-3 py-1.5 text-sm font-extrabold tabular-nums text-ink-700 border-[1.5px] border-edge">

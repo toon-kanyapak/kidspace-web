@@ -42,7 +42,15 @@ export const ACTIVITIES = [
       'สลับให้ลูกเป็นคนปิดหน้าบ้าง',
       'ลองซ่อนหลังผ้าห่มหรือมุมประตูเพิ่มความสนุก',
     ],
+    stepsEn: [
+      'Cover your face with your hands and ask “Where did Mum go?”',
+      'Open your hands and say “Peek-a-boo!” in a bright voice',
+      'Swap over and let your child hide their face',
+      'Try hiding behind a blanket or a doorway for extra fun',
+    ],
     whyTh: 'ช่วยให้ลูกเข้าใจว่า "ของที่มองไม่เห็น ยังอยู่" ซึ่งเป็นพื้นฐานของความมั่นคงทางใจ',
+    whyEn:
+      'Teaches your child that things still exist when they cannot be seen — the foundation of feeling secure.',
   },
   {
     id: 'song-actions',
@@ -62,7 +70,14 @@ export const ACTIVITIES = [
       'ร้องรอบสองแล้วหยุดกลางประโยคให้ลูกร้องต่อ',
       'ปิดท้ายด้วยการให้ลูกคิดท่าใหม่เอง',
     ],
+    stepsEn: [
+      'Pick a song your child knows well',
+      'Do the actions slowly so they can copy you',
+      'Sing it again but stop mid-line and let them finish',
+      'Finish by letting them invent a new action',
+    ],
     whyTh: 'เชื่อมภาษาเข้ากับการเคลื่อนไหว ทำให้จำคำได้เร็วและกล้าแสดงออก',
+    whyEn: 'Links language to movement, so words stick faster and children feel bolder about joining in.',
   },
   {
     id: 'puzzle-scene',
@@ -78,7 +93,13 @@ export const ACTIVITIES = [
     needTh: 'ไม่ต้องเตรียมอะไร เริ่มได้เลย',
     needEn: 'No prep needed',
     stepsTh: ['เลือกภาพฉากที่ลูกชอบ', 'ต่อชิ้นขอบก่อน แล้วค่อยเติมตรงกลาง', 'ชวนลูกเล่าว่าในภาพเกิดอะไรขึ้น'],
+    stepsEn: [
+      'Choose a picture scene your child likes',
+      'Do the edge pieces first, then fill the middle',
+      'Ask them to tell you what is happening in the picture',
+    ],
     whyTh: 'ฝึกสายตา การวางแผน และความอดทนในการทำงานให้จบ',
+    whyEn: 'Builds visual skills, planning, and the patience to finish something.',
   },
   {
     id: 'cup-hide',
@@ -99,7 +120,14 @@ export const ACTIVITIES = [
       'เพิ่มความเร็วเมื่อลูกทายถูกบ่อยขึ้น',
       'สลับให้ลูกเป็นคนซ่อนบ้าง',
     ],
+    stepsEn: [
+      'Put the object under one cup while they watch',
+      'Shuffle the cups slowly and let them guess',
+      'Speed up as they get better at it',
+      'Swap over and let them do the hiding',
+    ],
     whyTh: 'ฝึกสมาธิจดจ่อและความจำใช้งาน (working memory)',
+    whyEn: 'Trains sustained attention and working memory.',
   },
   {
     id: 'kitchen-helper',
@@ -119,7 +147,14 @@ export const ACTIVITIES = [
       'ให้ลูกช่วยฉีกผักหรือคนส่วนผสม',
       'ชิมด้วยกันแล้วชมว่า "หนูช่วยทำ"',
     ],
+    stepsEn: [
+      'Let your child pick three vegetables to wash',
+      'Guess together what each one is called and what colour it is',
+      'Let them tear leaves or stir the mix',
+      'Taste it together and say “you helped make this”',
+    ],
     whyTh: 'เด็กที่ได้ร่วมทำอาหารมักกล้าลองกินผักมากขึ้น',
+    whyEn: 'Children who help cook are far more willing to try vegetables.',
   },
   {
     id: 'obstacle',
@@ -139,7 +174,14 @@ export const ACTIVITIES = [
       'จับเวลาแล้วให้ลูกทำลายสถิติตัวเอง',
       'ให้ลูกออกแบบด่านใหม่ให้พ่อแม่เล่นบ้าง',
     ],
+    stepsEn: [
+      'Lay pillows as a path and add one chair to crawl under',
+      'Demo one lap so they see the route',
+      'Time them and let them beat their own record',
+      'Let them design the next course for you',
+    ],
     whyTh: 'ปล่อยพลัง ฝึกการทรงตัว และฝึกทำตามลำดับขั้นตอน',
+    whyEn: 'Burns energy, builds balance, and practises following a sequence of steps.',
   },
   {
     id: 'nature-hunt',
@@ -159,7 +201,14 @@ export const ACTIVITIES = [
       'กลับบ้านแล้วเรียงของที่หาได้เป็นภาพ',
       'ให้ลูกเล่าว่าเจอแต่ละอย่างที่ไหน',
     ],
+    stepsEn: [
+      'Set five targets, e.g. a yellow leaf, a smooth stone',
+      'Walk and hunt together — no rush',
+      'Back home, lay the finds out as a picture',
+      'Ask them where each thing was found',
+    ],
     whyTh: 'ฝึกการสังเกตและเพิ่มคลังคำศัพท์จากของจริง',
+    whyEn: 'Sharpens observation and grows vocabulary from real objects.',
   },
   {
     id: 'taste-guess',
@@ -179,7 +228,14 @@ export const ACTIVITIES = [
       'ให้ทายว่าคืออะไร หวานหรือเปรี้ยว',
       'สลับให้ลูกป้อนพ่อแม่บ้าง',
     ],
+    stepsEn: [
+      'Cut three or four fruits into bite-sized pieces',
+      'Ask your child to close their eyes and taste one at a time',
+      'Have them guess what it is — sweet or sour?',
+      'Swap over and let them feed you',
+    ],
     whyTh: 'ทำให้มื้ออาหารสนุกและช่วยเรื่องเด็กเลือกกิน',
+    whyEn: 'Makes mealtimes playful and helps with fussy eating.',
   },
   {
     id: 'rainbow-plate',
@@ -200,7 +256,14 @@ export const ACTIVITIES = [
       'ถ่ายรูปจานไว้เป็นคอลเลกชัน',
       'กินสีที่ลูกเลือกเองก่อน',
     ],
+    stepsEn: [
+      'Agree how many colours to collect this meal',
+      'Let your child arrange the food by colour',
+      'Photograph the plate to start a collection',
+      'Eat the colour they chose first',
+    ],
     whyTh: 'เปลี่ยนการกินผักเป็นเกมสะสม ลดการต่อรองบนโต๊ะอาหาร',
+    whyEn: 'Turns eating vegetables into a collecting game and cuts down mealtime negotiation.',
   },
   {
     id: 'menu-talk',
@@ -219,7 +282,13 @@ export const ACTIVITIES = [
       'พ่อแม่สั่งอาหารแบบมีคำถาม เช่น "เผ็ดไหมครับ"',
       'สลับบทบาทกัน',
     ],
+    stepsEn: [
+      'Let your child be the waiter and describe the menu',
+      'Order with questions like “Is it spicy?”',
+      'Swap roles',
+    ],
     whyTh: 'ฝึกการเล่าเรื่องเป็นลำดับและมารยาทการสนทนา',
+    whyEn: 'Practises telling things in order, plus the manners of a real conversation.',
   },
   {
     id: 'count-together',
@@ -240,7 +309,14 @@ export const ACTIVITIES = [
       'ให้ลูกนับเองแล้วพ่อแม่ทวนตาม',
       'ลองนับถอยหลังตอนขึ้นบันได',
     ],
+    stepsEn: [
+      'Pick things around you — stairs, spoons, red cars',
+      'Count out loud together, slowly',
+      'Let them count alone while you echo',
+      'Try counting backwards going up the stairs',
+    ],
     whyTh: 'สร้างความรู้สึกว่าตัวเลขอยู่ในชีวิตประจำวัน ไม่ใช่แค่ในสมุด',
+    whyEn: 'Makes numbers part of daily life rather than something that lives in a workbook.',
   },
   {
     id: 'sock-match',
@@ -261,7 +337,14 @@ export const ACTIVITIES = [
       'จับเวลาแล้วเชียร์',
       'ให้ลูกพับเก็บเข้าลิ้นชักเอง',
     ],
+    stepsEn: [
+      'Tip the clean socks into one pile',
+      'Ask your child to find the matching pairs',
+      'Time them and cheer them on',
+      'Let them fold and put the socks away',
+    ],
     whyTh: 'ฝึกจับคู่ แยกประเภท และได้ช่วยงานบ้านไปในตัว',
+    whyEn: 'Practises matching and sorting, and gets a chore done at the same time.',
   },
   {
     id: 'shape-hunt',
@@ -281,7 +364,14 @@ export const ACTIVITIES = [
       'นับรวมกันตอนจบ',
       'วันถัดไปเปลี่ยนเป็นสามเหลี่ยม',
     ],
+    stepsEn: [
+      'Pick one shape, for example a circle',
+      'Walk around the house finding circular things',
+      'Count the total together at the end',
+      'Switch to triangles tomorrow',
+    ],
     whyTh: 'เชื่อมเรขาคณิตเข้ากับสิ่งของจริงรอบตัว',
+    whyEn: 'Connects geometry to real objects your child can touch.',
   },
   {
     id: 'story-cards',
@@ -301,7 +391,14 @@ export const ACTIVITIES = [
       'ช่วยกันแต่งเรื่องจากการ์ดที่ได้',
       'เล่าซ้ำอีกรอบให้คนอื่นในบ้านฟัง',
     ],
+    stepsEn: [
+      'Draw six objects on paper and cut them into cards',
+      'Pull three at random',
+      'Build a story together from the cards you drew',
+      'Retell it once more to someone else at home',
+    ],
     whyTh: 'ฝึกจินตนาการและการเรียงลำดับเหตุการณ์',
+    whyEn: 'Builds imagination and the skill of putting events in order.',
   },
   {
     id: 'calm-breath',
@@ -321,7 +418,14 @@ export const ACTIVITIES = [
       'หายใจออกเหมือนเป่าเทียน นับ 1–5',
       'ทำ 5 รอบแล้วเงียบ ๆ ด้วยกัน',
     ],
+    stepsEn: [
+      'Have your child lie on their back with hands on their tummy',
+      'Breathe in like smelling a flower — count to three',
+      'Breathe out like blowing a candle — count to five',
+      'Do five rounds, then lie quietly together',
+    ],
     whyTh: 'ช่วยลดการตื่นตัวก่อนนอน ทำให้ลูกหลับง่ายขึ้น',
+    whyEn: 'Lowers arousal before bed so falling asleep gets easier.',
   },
   {
     id: 'day-recap',
@@ -341,7 +445,14 @@ export const ACTIVITIES = [
       'บอกลูกว่าพ่อแม่ชอบอะไรของวันนี้',
       'ปิดท้ายว่าพรุ่งนี้อยากลองอะไร',
     ],
+    stepsEn: [
+      'Ask “What was the best bit of today?”',
+      'Ask “Was anything hard today?”',
+      'Tell them what you liked about your own day',
+      'Finish with what they want to try tomorrow',
+    ],
     whyTh: 'สร้างพื้นที่ปลอดภัยให้ลูกเล่าเรื่องยาก ๆ ได้ในอนาคต',
+    whyEn: 'Builds a safe space so your child will still bring you hard things years from now.',
   },
   {
     id: 'shadow-play',
@@ -361,7 +472,14 @@ export const ACTIVITIES = [
       'ให้ลูกทำเงาแล้วพ่อแม่ทายบ้าง',
       'จบด้วยเงาที่นอนหลับ แล้วปิดไฟ',
     ],
+    stepsEn: [
+      'Turn the lights off and shine the torch at the wall',
+      'Make a dog, a bird, a rabbit and let them guess',
+      'Swap over — they make shadows, you guess',
+      'End with a sleeping shadow, then lights out',
+    ],
     whyTh: 'เปลี่ยนความมืดให้เป็นเรื่องสนุก ลดความกลัวก่อนนอน',
+    whyEn: 'Turns the dark into something playful and takes the edge off bedtime fears.',
   },
   {
     id: 'massage',
@@ -381,7 +499,14 @@ export const ACTIVITIES = [
       'นวดฝ่ามือและนิ้วทีละนิ้ว',
       'จบด้วยกอดและบอกราตรีสวัสดิ์',
     ],
+    stepsEn: [
+      'Warm your hands by rubbing them together',
+      'Stroke gently from knee down to foot',
+      'Massage the palm and each finger in turn',
+      'Finish with a hug and goodnight',
+    ],
     whyTh: 'การสัมผัสช่วยลดฮอร์โมนความเครียดและทำให้หลับลึกขึ้น',
+    whyEn: 'Touch lowers stress hormones and deepens sleep.',
   },
   {
     id: 'tummy-time',
@@ -401,7 +526,14 @@ export const ACTIVITIES = [
       'เขย่าของเล่นมีเสียงให้ลูกเงยหน้าตาม',
       'เริ่ม 2–3 นาที แล้วค่อยเพิ่ม',
     ],
+    stepsEn: [
+      'Lay a mat down and place your baby on their tummy',
+      'Lie down facing them, nose to nose',
+      'Shake a noisy toy so they lift their head to look',
+      'Start with 2–3 minutes and build up',
+    ],
     whyTh: 'สร้างกล้ามเนื้อคอและหลัง เป็นพื้นฐานของการคลานและนั่ง',
+    whyEn: 'Builds the neck and back strength that crawling and sitting depend on.',
   },
   {
     id: 'water-pour',
@@ -421,7 +553,14 @@ export const ACTIVITIES = [
       'ให้ลูกลองเอง หกได้ไม่เป็นไร',
       'ให้ลูกช่วยเช็ดเองตอนจบ',
     ],
+    stepsEn: [
+      'Put two cups on a tray, one half full of water',
+      'Demonstrate pouring slowly',
+      'Let them try — spills are completely fine',
+      'Let them wipe up afterwards',
+    ],
     whyTh: 'ฝึกกล้ามเนื้อมัดเล็กและความมั่นใจในการทำเองได้',
+    whyEn: 'Develops fine motor control and the confidence of doing it themselves.',
   },
   {
     id: 'bubble-chase',
@@ -436,7 +575,13 @@ export const ACTIVITIES = [
     needTh: 'ต้องใช้: น้ำยาเป่าฟองสบู่',
     needEn: 'Needs: bubble solution',
     stepsTh: ['เป่าฟองสบู่ให้ลูกไล่ตบ', 'เปลี่ยนกติกาเป็นตบด้วยศอก ด้วยเข่า', 'ให้ลูกเป่าแล้วพ่อแม่ไล่บ้าง'],
+    stepsEn: [
+      'Blow bubbles and let your child pop them',
+      'Change the rule — pop with an elbow, then a knee',
+      'Swap over: they blow, you chase',
+    ],
     whyTh: 'ฝึกการกะระยะสายตา-มือ และได้ออกแรงกลางแจ้ง',
+    whyEn: 'Practises hand–eye timing and gets real energy out.',
   },
   {
     id: 'chalk-road',
@@ -456,7 +601,14 @@ export const ACTIVITIES = [
       'ให้ลูกขับรถของเล่นไปตามถนน',
       'เพิ่มกฎใหม่ เช่น ไฟแดงต้องหยุด',
     ],
+    stepsEn: [
+      'Draw a long road with some bends',
+      'Add stop signs and a zebra crossing',
+      'Let them drive toy cars along it',
+      'Add a new rule, like stopping at a red light',
+    ],
     whyTh: 'ฝึกการวางแผนพื้นที่และการเล่นตามกติกา',
+    whyEn: 'Practises planning in space and playing to agreed rules.',
   },
   {
     id: 'silent-game',
@@ -476,7 +628,13 @@ export const ACTIVITIES = [
       'ฟังว่ามีเสียงอะไรบ้าง',
       'พอหมดเวลาให้ผลัดกันเล่าว่าได้ยินอะไร',
     ],
+    stepsEn: [
+      'Set a timer for one minute — nobody may speak',
+      'Listen for every sound you can hear',
+      'When time is up, take turns saying what you heard',
+    ],
     whyTh: 'ฝึกการฟังอย่างตั้งใจ และเป็นตัวช่วยเวลาบรรยากาศบนโต๊ะเริ่มวุ่น',
+    whyEn: 'Trains careful listening, and rescues the mood when the table gets chaotic.',
   },
   {
     id: 'gratitude-jar',
@@ -495,7 +653,13 @@ export const ACTIVITIES = [
       'ทุกคืนเขียนหรือวาดเรื่องดี ๆ 1 อย่างใส่โหล',
       'สุดสัปดาห์เปิดอ่านด้วยกัน',
     ],
+    stepsEn: [
+      'Decorate the jar together first',
+      'Each night write or draw one good thing and drop it in',
+      'Open and read them together at the weekend',
+    ],
     whyTh: 'สร้างนิสัยมองเห็นเรื่องดีในวันธรรมดา และเป็นบันทึกครอบครัว',
+    whyEn: 'Builds the habit of noticing good things on ordinary days, and becomes a family record.',
   },
 ]
 

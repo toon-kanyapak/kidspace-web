@@ -6,10 +6,11 @@ import { LOGIC_GAMES } from '../data/catalog'
 import { useApp } from '../store/AppContext'
 
 export default function Games() {
-  const { t } = useApp()
+  const { t, tx } = useApp()
   return (
     <>
       <PageHeader
+        art="dice"
         eyebrow={t('ฝึกคิด', 'Thinking')}
         title={t('เกมเรียนรู้', 'Learning games')}
         lead={t(
@@ -31,10 +32,10 @@ export default function Games() {
                   {g.emoji}
                 </span>
                 <span className="min-w-0 flex-1">
-                  <span className="block truncate font-extrabold text-ink-900">{g.th}</span>
-                  <span className="mt-0.5 block text-xs leading-snug text-ink-500">{g.subTh}</span>
+                  <span className="block truncate font-extrabold text-ink-900">{t(g.th, g.en)}</span>
+                  <span className="mt-0.5 block text-xs leading-snug text-ink-500">{tx(g, 'sub')}</span>
                   <span className="mt-1.5 inline-block rounded-full bg-brand-50 px-2.5 py-0.5 text-[11px] font-semibold text-brand-700">
-                    {g.age}
+                    {tx(g, 'age')}
                   </span>
                 </span>
                 <Icon name="arrowRight" size={18} className="shrink-0 text-brand-300" />

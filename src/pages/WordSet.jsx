@@ -115,7 +115,7 @@ export default function WordSet() {
     const nextLv = WORD_LEVELS[lvIdx + 1]
     return (
       <>
-        <PageHeader title={set.th} to="/words" />
+        <PageHeader title={t(set.th, set.en)} to="/words" />
         <WinScreen
           emoji={set.emoji}
           title={t('เก่งมาก!', 'Great job!')}
@@ -130,7 +130,8 @@ export default function WordSet() {
         />
         {nextLv && (
           <Button className="mt-3" size="lg" onClick={() => setLevel(nextLv.id)}>
-            {t(`ไประดับ${nextLv.th}`, `Go to ${nextLv.en}`)} <Icon name="arrowRight" size={16} />
+            {t(`ไประดับ${t(nextLv.th, nextLv.en)}`, `Go to ${nextLv.en}`)}{' '}
+            <Icon name="arrowRight" size={16} />
           </Button>
         )}
       </>
@@ -139,7 +140,7 @@ export default function WordSet() {
 
   return (
     <>
-      <PageHeader title={set.th} to="/words" />
+      <PageHeader title={t(set.th, set.en)} to="/words" />
       <div className="mx-auto w-full max-w-[560px] space-y-4 pb-8">
         <div className="flex gap-2">
           {WORD_LEVELS.map((lv) => (
@@ -157,7 +158,10 @@ export default function WordSet() {
           ))}
         </div>
         <p className="text-center text-sm font-semibold text-ink-500">
-          {WORD_LEVELS.find((l) => l.id === level).hintTh}
+          {tx(
+            WORD_LEVELS.find((l) => l.id === level),
+            'hint',
+          )}
         </p>
 
         {level !== 'drag' && (

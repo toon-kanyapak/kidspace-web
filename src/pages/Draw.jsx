@@ -18,12 +18,12 @@ const COLORS = [
 ]
 
 const BRUSHES = [
-  { id: 'crayon', emoji: '🖍️', th: 'สีเทียน' },
-  { id: 'neon', emoji: '💡', th: 'นีออน' },
-  { id: 'rainbow', emoji: '🌈', th: 'สายรุ้ง' },
-  { id: 'glitter', emoji: '✨', th: 'กากเพชร' },
-  { id: 'hearts', emoji: '💗', th: 'ลายน่ารัก' },
-  { id: 'eraser', emoji: '🧽', th: 'ยางลบ' },
+  { id: 'crayon', emoji: '🖍️', th: 'สีเทียน', en: 'Crayon' },
+  { id: 'neon', emoji: '💡', th: 'นีออน', en: 'Neon' },
+  { id: 'rainbow', emoji: '🌈', th: 'สายรุ้ง', en: 'Rainbow' },
+  { id: 'glitter', emoji: '✨', th: 'กากเพชร', en: 'Glitter' },
+  { id: 'hearts', emoji: '💗', th: 'ลายน่ารัก', en: 'Stickers' },
+  { id: 'eraser', emoji: '🧽', th: 'ยางลบ', en: 'Eraser' },
 ]
 
 const SIZES = [6, 12, 22, 36]
@@ -371,7 +371,7 @@ export default function Draw() {
               }`}
             >
               <span className="text-xl">{b.emoji}</span>
-              <span className="text-[11px] font-bold">{b.th}</span>
+              <span className="text-[11px] font-bold">{t(b.th, b.en)}</span>
             </button>
           ))}
         </div>

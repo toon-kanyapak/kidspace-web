@@ -175,8 +175,8 @@ export default function Settings() {
           </div>
           <p className="px-1 text-xs text-ink-500">
             {t(
-              'เดโมนี้แปลเฉพาะส่วนหลักของหน้าจอ เนื้อหาบทความและนิทานยังเป็นภาษาไทย',
-              'The demo translates the shell only; articles and stories stay in Thai.',
+              'สลับได้ทุกเมื่อ — เนื้อหาทั้งหมด รวมบทความและนิทาน มีทั้งสองภาษา',
+              'Switch any time — every screen, including articles and stories, exists in both languages.',
             )}
           </p>
         </section>

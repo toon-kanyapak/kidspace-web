@@ -132,3 +132,30 @@ h1, h2, h3, .font-display { font-family: var(--font-display); }
 @media (prefers-reduced-motion: reduce) {
   *, *::before, *::after { animation-duration: .001ms !important; transition-duration: .001ms !important; }
 }
+
+/* ---------------------------------------------------------------
+   Illustration motion. Every scene is inline SVG, so the parts can
+   be animated individually. All of it is disabled by the
+   prefers-reduced-motion rule above.
+   --------------------------------------------------------------- */
+@keyframes ks-drift   { 0%,100% { transform: translateY(0) }        50% { transform: translateY(-6px) } }
+@keyframes ks-swing   { 0%,100% { transform: rotate(-5deg) }        50% { transform: rotate(5deg) } }
+@keyframes ks-twinkle { 0%,100% { opacity: .25; transform: scale(.8) } 50% { opacity: 1; transform: scale(1.15) } }
+@keyframes ks-beat    { 0%,100% { transform: scale(1) }             50% { transform: scale(1.12) } }
+@keyframes ks-roll    { from { transform: rotate(0) }               to { transform: rotate(360deg) } }
+@keyframes ks-blink   { 0%,92%,100% { transform: scaleY(1) }        96% { transform: scaleY(.1) } }
+@keyframes ks-wave    { 0%,100% { transform: translateX(0) }        50% { transform: translateX(4px) } }
+@keyframes ks-trace   { from { stroke-dashoffset: 240 }             to { stroke-dashoffset: 0 } }
+
+.ks-drift   { animation: ks-drift 4s ease-in-out infinite }
+.ks-swing   { animation: ks-swing 3.4s ease-in-out infinite; transform-origin: top center }
+.ks-twinkle { animation: ks-twinkle 2.4s ease-in-out infinite }
+.ks-beat    { animation: ks-beat 2.2s ease-in-out infinite; transform-origin: center }
+.ks-roll    { animation: ks-roll 14s linear infinite; transform-origin: center }
+.ks-blink   { animation: ks-blink 5s ease-in-out infinite; transform-origin: center }
+.ks-wave    { animation: ks-wave 2.6s ease-in-out infinite }
+.ks-trace   { stroke-dasharray: 240; animation: ks-trace 2.6s ease-out both }
+
+/* stagger helpers so repeated elements do not pulse in lockstep */
+.ks-d1 { animation-delay: .35s } .ks-d2 { animation-delay: .7s }
+.ks-d3 { animation-delay: 1.05s } .ks-d4 { animation-delay: 1.4s }

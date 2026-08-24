@@ -6,10 +6,11 @@ import { READING_LEVELS, readingsByLevel } from '../data/reading'
 import { useApp } from '../store/AppContext'
 
 export default function Reading() {
-  const { t, progress } = useApp()
+  const { t, tx, progress } = useApp()
   return (
     <>
       <PageHeader
+        art="book"
         eyebrow={t('ฝึกคิด', 'Thinking')}
         title={t('อ่านจับใจความ', 'Reading')}
         lead={t(
@@ -25,9 +26,9 @@ export default function Reading() {
             <section key={lv.id} className="space-y-3">
               <div className={`rounded-2xl ${tn.bg} p-4 border-[1.5px] ${tn.ring}`}>
                 <p className="font-extrabold text-ink-900">
-                  {lv.th} · {lv.age}
+                  {t(lv.th, lv.en)} · {tx(lv, 'age')}
                 </p>
-                <p className="mt-0.5 text-sm text-ink-500">{lv.descTh}</p>
+                <p className="mt-0.5 text-sm text-ink-500">{tx(lv, 'desc')}</p>
               </div>
               <div className="grid gap-3 sm:grid-cols-2">
                 {items.map((r) => (
@@ -42,7 +43,7 @@ export default function Reading() {
                       {r.emoji}
                     </span>
                     <span className="min-w-0 flex-1">
-                      <span className="block font-bold text-ink-900">{r.th}</span>
+                      <span className="block font-bold text-ink-900">{t(r.th, r.en) ?? r.th}</span>
                       <span className="block text-xs text-ink-500">
                         {r.qs.length} {t('คำถาม', 'questions')}
                       </span>

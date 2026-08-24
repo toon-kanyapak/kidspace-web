@@ -5,29 +5,41 @@ import { Button, Card, Chip } from '../components/ui'
 import { useApp } from '../store/AppContext'
 
 const KEYS = [
-  { n: 'C', th: 'โด', f: 261.63, sharp: false },
-  { n: 'D', th: 'เร', f: 293.66, sharp: false },
-  { n: 'E', th: 'มี', f: 329.63, sharp: false },
-  { n: 'F', th: 'ฟา', f: 349.23, sharp: false },
-  { n: 'G', th: 'ซอล', f: 392.0, sharp: false },
-  { n: 'A', th: 'ลา', f: 440.0, sharp: false },
-  { n: 'B', th: 'ที', f: 493.88, sharp: false },
-  { n: "C'", th: 'โด สูง', f: 523.25, sharp: false },
+  { n: 'C', th: 'โด', en: 'Do', f: 261.63, sharp: false },
+  { n: 'D', th: 'เร', en: 'Re', f: 293.66, sharp: false },
+  { n: 'E', th: 'มี', en: 'Mi', f: 329.63, sharp: false },
+  { n: 'F', th: 'ฟา', en: 'Fa', f: 349.23, sharp: false },
+  { n: 'G', th: 'ซอล', en: 'Sol', f: 392.0, sharp: false },
+  { n: 'A', th: 'ลา', en: 'La', f: 440.0, sharp: false },
+  { n: 'B', th: 'ที', en: 'Ti', f: 493.88, sharp: false },
+  { n: "C'", th: 'โด สูง', en: 'High Do', f: 523.25, sharp: false },
 ]
 
 const SONGS = [
   {
     id: 'twinkle',
     th: 'ดาวระยิบระยับ',
+    en: 'Twinkle, Twinkle',
     notes: ['C', 'C', 'G', 'G', 'A', 'A', 'G', 'F', 'F', 'E', 'E', 'D', 'D', 'C'],
   },
   {
     id: 'mary',
     th: 'แมรี่มีแกะน้อย',
+    en: 'Mary Had a Little Lamb',
     notes: ['E', 'D', 'C', 'D', 'E', 'E', 'E', 'D', 'D', 'D', 'E', 'G', 'G'],
   },
-  { id: 'chang', th: 'ช้าง ช้าง ช้าง', notes: ['G', 'E', 'E', 'F', 'D', 'D', 'C', 'E', 'G', 'G', 'E'] },
-  { id: 'scale', th: 'ไล่เสียงโดเรมี', notes: ['C', 'D', 'E', 'F', 'G', 'A', 'B', "C'"] },
+  {
+    id: 'chang',
+    th: 'ช้าง ช้าง ช้าง',
+    en: 'Chang Chang Chang',
+    notes: ['G', 'E', 'E', 'F', 'D', 'D', 'C', 'E', 'G', 'G', 'E'],
+  },
+  {
+    id: 'scale',
+    th: 'ไล่เสียงโดเรมี',
+    en: 'Do-Re-Mi scale',
+    notes: ['C', 'D', 'E', 'F', 'G', 'A', 'B', "C'"],
+  },
 ]
 
 export default function ClassroomMelodica() {
@@ -122,7 +134,7 @@ export default function ClassroomMelodica() {
                     sfx('tap')
                   }}
                 >
-                  {s.th}
+                  {t(s.th, s.en)}
                 </Chip>
               ))}
             </div>
@@ -169,7 +181,7 @@ export default function ClassroomMelodica() {
                 }`}
               >
                 <span className="text-lg font-extrabold">{k.n}</span>
-                <span className="text-[11px] opacity-70">{k.th}</span>
+                <span className="text-[11px] opacity-70">{t(k.th, k.en)}</span>
               </button>
             )
           })}

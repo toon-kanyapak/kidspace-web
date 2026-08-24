@@ -23,6 +23,7 @@ npx prettier --write "src/**/*.{js,jsx}"
 | Styling | Tailwind CSS v4 (`@theme` tokens in `src/index.css`) |
 | Audio | Web Speech API (TTS + speech recognition), Web Audio for game sounds |
 | Storage | `localStorage` via `src/lib/storage.js` |
+| Imagery | Original inline SVG scenes in `src/components/Scene.jsx`, animated with CSS |
 
 ## Deployment
 
@@ -89,7 +90,18 @@ All of it lives as Tailwind v4 `@theme` tokens in `src/index.css`; components ma
 tint names through `TINTS` in `src/components/ui.jsx` and never hard-code a
 colour, so retheming is a one-file change.
 
-**Component vocabulary:** `Paper` · `Sticker` · `Chip` · `Shelf` ·
+**Illustrations.** `src/components/Scene.jsx` holds 16 named inline-SVG scenes
+— `together`, `clock`, `blocks`, `moon`, `dice`, `brain`, `robot`, `brush`,
+`mic`, `abc`, `chat`, `book`, `versus`, `board`, `quiz`, `empty`. They are drawn
+for this project (MIT with the repo), so there is no third-party image licence
+to track, nothing is fetched at runtime, and no photographs of real children are
+involved. Each is a handful of vector shapes painted from the same palette
+tokens, with one or two parts animated (`ks-drift`, `ks-swing`, `ks-twinkle`,
+`ks-beat`, `ks-roll`, `ks-blink`, `ks-wave`, `ks-trace`). Scenes appear in the
+page headers, the pinned home card, empty states and win screens, and all motion
+stops under `prefers-reduced-motion`.
+
+**Component vocabulary:** `Paper` · `Sticker` · `Scene` · `Chip` · `Shelf` ·
 `SectionTitle` (with a hand-drawn swash) · `Tile` · `Badge` · `Progress` ·
 `Stars`.
 
@@ -128,21 +140,36 @@ colour, so retheming is a one-file change.
 | `/feedback` | Topic, star rating, free text — stored locally |
 
 ### Cross-cutting
-- **TH / EN toggle** on the app shell (`t(th, en)` from `useApp()`)
+- **Fully bilingual, English by default** — `t(th, en)` for inline copy and `tx(obj, key)` for data fields, both from `useApp()`; Thai is one tap away
 - **Sound toggle** and **speech-rate** setting applied globally
 - **Stars** earned from finishing anything; progress marks completed items across the app
 - Sidebar navigation on desktop, tab bar on phones; the same screens serve both
 - `prefers-reduced-motion` honoured; every Web Speech / Web Audio call degrades silently when unsupported
 
+## Bilingual content
+
+The app opens in **English**; the TH/EN toggle in the top bar switches everything.
+
+- `t(th, en)` — inline UI copy.
+- `tx(obj, base)` — data fields, reading `baseEn` in English and `baseTh` in
+  Thai, falling back to the other language so nothing renders blank.
+
+Both come from `useApp()`. Every data file carries both languages: activity
+steps and rationales, all 16 article bodies, the 6 bedtime stories, the 9 reading
+passages with their questions (answer indices verified to match across
+languages), the 32 quiz questions and four result profiles, and every game name
+and blurb. Vocabulary cards deliberately keep their Thai gloss in both modes —
+that pairing is the point of the exercise.
+
 ## Layout
 
 ```
 src/
-  components/   Shell (layout + headers), GameShell, ui.jsx, Icon.jsx
+  components/   Shell (layout + headers), GameShell, ui.jsx, Icon.jsx, Scene.jsx
   store/        AppContext — lang, sound, rate, voice, stars, progress, favourites
   lib/          storage · speech (TTS + blips) · scroll
   data/         activities · articles · stories · words · speak · talk
-                reading · quiz · coding · catalog
+                reading · quiz · coding · catalog  (all bilingual)
   pages/        one file per screen
   games/        8 logic games
   brain/        6 brain-gym games
@@ -152,7 +179,8 @@ src/
 ## Known limits of the demo
 
 - Nothing is persisted beyond this browser — clearing site data resets everything.
-- The TH/EN toggle translates the app shell and UI copy; article and story bodies stay in Thai.
+- The app opens in English; the TH/EN toggle covers every screen, including article bodies, stories, reading passages and the quiz.
 - Speech synthesis and recognition depend on the browser; Safari and Chrome differ in available voices, and recognition is Chrome-only.
 - Drawings are not saved to disk.
 - Content is original writing modelled on the reference site's structure, not copied from it.
+- Illustrations are original SVGs authored for this project — no stock imagery, no third-party licences, no photos of real children.

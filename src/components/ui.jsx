@@ -1,5 +1,6 @@
 import { Link } from 'react-router-dom'
 import Icon from './Icon'
+import Scene from './Scene'
 
 /* ---------------- craft accent palette ---------------- */
 export const TINTS = {
@@ -174,10 +175,10 @@ export function Badge({ tone = 'blush', className = '', children }) {
 }
 
 /* ---------------- Empty state ---------------- */
-export function Empty({ icon = 'sparkle', title, hint }) {
+export function Empty({ icon = 'sparkle', scene = 'empty', title, hint }) {
   return (
     <Paper className="flex flex-col items-center gap-2 px-6 py-12 text-center">
-      <Sticker tone="blush" icon={icon} size="lg" className="tilt-l" />
+      <Scene name={scene} className="w-44" />
       <p className="mt-1 font-display font-bold text-ink-900">{title}</p>
       {hint && <p className="max-w-[30ch] text-sm text-ink-500">{hint}</p>}
     </Paper>

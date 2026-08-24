@@ -6,7 +6,8 @@ export const WORD_SETS = [
     en: 'Body parts',
     tone: 'blush',
     emoji: '👋',
-    age: '4–7 ขวบ',
+    ageTh: '4–7 ขวบ',
+    ageEn: 'Ages 4–7',
     words: [
       { en: 'head', th: 'หัว', emoji: '🧠' },
       { en: 'eye', th: 'ตา', emoji: '👁️' },
@@ -24,7 +25,8 @@ export const WORD_SETS = [
     en: 'Animals',
     tone: 'mint',
     emoji: '🐶',
-    age: '4–7 ขวบ',
+    ageTh: '4–7 ขวบ',
+    ageEn: 'Ages 4–7',
     words: [
       { en: 'dog', th: 'สุนัข', emoji: '🐶' },
       { en: 'cat', th: 'แมว', emoji: '🐱' },
@@ -42,7 +44,8 @@ export const WORD_SETS = [
     en: 'Colors',
     tone: 'lilac',
     emoji: '🎨',
-    age: '4–7 ขวบ',
+    ageTh: '4–7 ขวบ',
+    ageEn: 'Ages 4–7',
     words: [
       { en: 'red', th: 'สีแดง', emoji: '🔴' },
       { en: 'blue', th: 'สีน้ำเงิน', emoji: '🔵' },
@@ -60,7 +63,8 @@ export const WORD_SETS = [
     en: 'Fruits',
     tone: 'peach',
     emoji: '🍎',
-    age: '4–7 ขวบ',
+    ageTh: '4–7 ขวบ',
+    ageEn: 'Ages 4–7',
     words: [
       { en: 'apple', th: 'แอปเปิล', emoji: '🍎' },
       { en: 'banana', th: 'กล้วย', emoji: '🍌' },
@@ -78,7 +82,8 @@ export const WORD_SETS = [
     en: 'Numbers',
     tone: 'butter',
     emoji: '🔢',
-    age: '4–7 ขวบ',
+    ageTh: '4–7 ขวบ',
+    ageEn: 'Ages 4–7',
     words: [
       { en: 'one', th: 'หนึ่ง', emoji: '1️⃣' },
       { en: 'two', th: 'สอง', emoji: '2️⃣' },
@@ -95,7 +100,28 @@ export const WORD_SETS = [
 export const wordSetById = (id) => WORD_SETS.find((s) => s.id === id)
 
 export const WORD_LEVELS = [
-  { id: 'listen', th: 'ฟัง', en: 'Listen', hintTh: 'ฟังเสียงแล้วแตะรูปที่ถูก', icon: 'volume' },
-  { id: 'drag', th: 'ลาก', en: 'Drag', hintTh: 'ลากคำไปวางบนรูปให้ตรงกัน', icon: 'game' },
-  { id: 'read', th: 'อ่าน', en: 'Read', hintTh: 'ดูรูปแล้วเลือกคำที่อ่านถูก', icon: 'abc' },
+  {
+    id: 'listen',
+    th: 'ฟัง',
+    en: 'Listen',
+    hintTh: 'ฟังเสียงแล้วแตะรูปที่ถูก',
+    hintEn: 'Listen, then tap the right picture',
+    icon: 'volume',
+  },
+  {
+    id: 'drag',
+    th: 'ลาก',
+    en: 'Drag',
+    hintTh: 'ลากคำไปวางบนรูปให้ตรงกัน',
+    hintEn: 'Drag each word onto its picture',
+    icon: 'game',
+  },
+  {
+    id: 'read',
+    th: 'อ่าน',
+    en: 'Read',
+    hintTh: 'ดูรูปแล้วเลือกคำที่อ่านถูก',
+    hintEn: 'Look at the picture, pick the right word',
+    icon: 'abc',
+  },
 ]

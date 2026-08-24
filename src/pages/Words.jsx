@@ -6,10 +6,11 @@ import { WORD_LEVELS, WORD_SETS } from '../data/words'
 import { useApp } from '../store/AppContext'
 
 export default function Words() {
-  const { t, progress } = useApp()
+  const { t, tx, lang, progress } = useApp()
   return (
     <>
       <PageHeader
+        art="abc"
         eyebrow={t('ภาษาอังกฤษ', 'English')}
         title={t('คำศัพท์อังกฤษ', 'English vocabulary')}
         lead={t(
@@ -39,9 +40,9 @@ export default function Words() {
                 className={`press flex flex-col gap-1.5 rounded-3xl ${tn.bg} p-4 border-[1.5px] ${tn.ring}`}
               >
                 <span className="text-3xl">{s.emoji}</span>
-                <span className="font-extrabold text-ink-900">{s.th}</span>
+                <span className="font-extrabold text-ink-900">{t(s.th, s.en)}</span>
                 <span className="text-xs text-ink-500">
-                  {s.en} · {s.words.length} {t('คำ', 'words')}
+                  {lang === 'en' ? s.th : s.en} · {s.words.length} {t('คำ', 'words')}
                 </span>
                 <span className="mt-1 flex gap-1">
                   {WORD_LEVELS.map((lv, i) => (

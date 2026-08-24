@@ -4,9 +4,9 @@ import { useApp } from '../store/AppContext'
 
 const FRUIT = ['🍎', '🍌', '🍇', '🍓', '🍊', '🥝']
 const OPS = [
-  { id: 'gt', glyph: '>', th: 'มากกว่า' },
-  { id: 'eq', glyph: '=', th: 'เท่ากับ' },
-  { id: 'lt', glyph: '<', th: 'น้อยกว่า' },
+  { id: 'gt', glyph: '>', th: 'มากกว่า', en: 'greater' },
+  { id: 'eq', glyph: '=', th: 'เท่ากับ', en: 'equal' },
+  { id: 'lt', glyph: '<', th: 'น้อยกว่า', en: 'less' },
 ]
 const ROUNDS = 8
 
@@ -119,7 +119,7 @@ export default function GreaterLess() {
               }`}
             >
               <span className="text-4xl font-extrabold">{o.glyph}</span>
-              <span className="text-xs font-bold">{o.th}</span>
+              <span className="text-xs font-bold">{t(o.th, o.en)}</span>
             </button>
           )
         })}

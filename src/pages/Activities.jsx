@@ -8,7 +8,7 @@ import { tint } from '../components/ui'
 import { useApp } from '../store/AppContext'
 
 export default function Activities() {
-  const { t, sfx } = useApp()
+  const { t, tx, sfx } = useApp()
   const [cat, setCat] = useState('all')
 
   const list = useMemo(() => (cat === 'all' ? ACTIVITIES : ACTIVITIES.filter((a) => a.cat === cat)), [cat])
@@ -16,6 +16,7 @@ export default function Activities() {
   return (
     <>
       <PageHeader
+        art="blocks"
         eyebrow={t('ทำด้วยกัน', 'Together')}
         title={t('กิจกรรมกับลูก', 'Activities')}
         lead={t(
@@ -60,7 +61,7 @@ export default function Activities() {
                     </span>
                     <span className="absolute left-2.5 top-2.5">
                       <Badge tone={a.tone} className="!bg-surface/85">
-                        {c?.th}
+                        {t(c?.th, c?.en)}
                       </Badge>
                     </span>
                     <span className="absolute right-2.5 top-2.5 inline-flex items-center gap-1 rounded-full bg-surface/85 px-2 py-0.5 text-[11px] font-bold text-ink-700">
@@ -73,8 +74,8 @@ export default function Activities() {
                     )}
                   </span>
                   <span className="flex flex-1 flex-col gap-1 p-3.5">
-                    <span className="font-bold leading-snug text-ink-900">{a.th}</span>
-                    <span className="line-clamp-2 text-xs leading-snug text-ink-500">{a.needTh}</span>
+                    <span className="font-bold leading-snug text-ink-900">{t(a.th, a.en)}</span>
+                    <span className="line-clamp-2 text-xs leading-snug text-ink-500">{tx(a, 'need')}</span>
                     <span className="mt-auto inline-flex items-center gap-1 pt-2 text-xs font-bold text-brand-600">
                       {t('เริ่มกิจกรรมนี้', 'Start')} <Icon name="arrowRight" size={13} />
                     </span>

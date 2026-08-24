@@ -1,6 +1,7 @@
 import { Suspense, useEffect } from 'react'
 import { Link, NavLink, Outlet, useLocation, useNavigate } from 'react-router-dom'
 import Icon from './Icon'
+import Scene from './Scene'
 import { useApp } from '../store/AppContext'
 
 /* --------------------------------------------------------------------------
@@ -246,7 +247,7 @@ function TopBar() {
  * this is a title block rather than a floating back bar; "back" only appears
  * on detail screens that have a parent list.
  */
-export function PageHeader({ title, eyebrow, lead, right, to }) {
+export function PageHeader({ title, eyebrow, lead, right, to, art }) {
   const navigate = useNavigate()
   return (
     <div className="mb-6 flex items-start gap-4 pt-6">
@@ -265,6 +266,7 @@ export function PageHeader({ title, eyebrow, lead, right, to }) {
         <h1 className="font-display text-[26px] font-bold leading-tight text-ink-900 sm:text-3xl">{title}</h1>
         {lead && <p className="mt-2 max-w-[62ch] text-[15px] leading-relaxed text-ink-500">{lead}</p>}
       </div>
+      {art && <Scene name={art} className="hidden w-36 shrink-0 self-center sm:block lg:w-44" />}
       {right && <div className="shrink-0 pt-1">{right}</div>}
     </div>
   )

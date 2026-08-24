@@ -7,7 +7,7 @@ import { ARTICLES, ARTICLE_CATS, catOf } from '../data/articles'
 import { useApp } from '../store/AppContext'
 
 export default function Articles() {
-  const { t, sfx } = useApp()
+  const { t, tx, sfx } = useApp()
   const [cat, setCat] = useState('all')
   const [q, setQ] = useState('')
 
@@ -15,12 +15,13 @@ export default function Articles() {
     const byCat = cat === 'all' ? ARTICLES : ARTICLES.filter((a) => a.cat === cat)
     if (!q.trim()) return byCat
     const needle = q.trim().toLowerCase()
-    return byCat.filter((a) => `${a.th} ${a.en} ${a.excerptTh}`.toLowerCase().includes(needle))
+    return byCat.filter((a) => `${a.th} ${a.en} ${a.excerptTh} ${a.excerptEn}`.toLowerCase().includes(needle))
   }, [cat, q])
 
   return (
     <>
       <PageHeader
+        art="book"
         eyebrow={t('สำหรับพ่อแม่', 'For parents')}
         title={t('บทความเลี้ยงลูก', 'Parenting articles')}
         lead={t(
@@ -77,8 +78,8 @@ export default function Articles() {
                   className="press block rounded-2xl border-l-4 border-brand-300 bg-surface p-4"
                 >
                   <Badge tone={c.tone}>{t(c.th, c.en)}</Badge>
-                  <p className="mt-2 font-bold leading-snug text-ink-900">{a.th}</p>
-                  <p className="mt-1 line-clamp-2 text-sm leading-relaxed text-ink-500">{a.excerptTh}</p>
+                  <p className="mt-2 font-bold leading-snug text-ink-900">{t(a.th, a.en)}</p>
+                  <p className="mt-1 line-clamp-2 text-sm leading-relaxed text-ink-500">{tx(a, 'excerpt')}</p>
                   <p className="mt-2 inline-flex items-center gap-1 text-xs font-semibold text-ink-500">
                     <Icon name="clock" size={12} /> {t(`อ่าน ${a.read} นาที`, `${a.read} min read`)}
                   </p>

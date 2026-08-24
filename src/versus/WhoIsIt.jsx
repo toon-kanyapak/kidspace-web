@@ -32,10 +32,10 @@ const CHARS = [
 ]
 
 const QUESTIONS = [
-  { id: 'glasses', th: 'ใส่แว่นไหม?', test: (c) => c.glasses },
-  { id: 'hat', th: 'ใส่หมวกไหม?', test: (c) => c.hat },
-  { id: 'hair', th: 'ผมสีเข้มไหม?', test: (c) => c.hair === 'dark' },
-  { id: 'smile', th: 'ยิ้มอยู่ไหม?', test: (c) => c.smile },
+  { id: 'glasses', th: 'ใส่แว่นไหม?', en: 'Wearing glasses?', test: (c) => c.glasses },
+  { id: 'hat', th: 'ใส่หมวกไหม?', en: 'Wearing a hat?', test: (c) => c.hat },
+  { id: 'hair', th: 'ผมสีเข้มไหม?', en: 'Dark hair?', test: (c) => c.hair === 'dark' },
+  { id: 'smile', th: 'ยิ้มอยู่ไหม?', en: 'Smiling?', test: (c) => c.smile },
 ]
 
 export default function WhoIsIt() {
@@ -61,7 +61,7 @@ export default function WhoIsIt() {
   const ask = (q) => {
     if (result) return
     const yes = q.test(current)
-    setAsked((a) => [...a, { q: q.th, yes }])
+    setAsked((a) => [...a, { id: q.id, yes }])
     // fold away everyone who contradicts the answer
     setFolded((f) => [...new Set([...f, ...CHARS.filter((c) => q.test(c) !== yes).map((c) => c.name)])])
     sfx(yes ? 'good' : 'tap')
@@ -88,8 +88,8 @@ export default function WhoIsIt() {
     >
       <div className="flex flex-wrap gap-2">
         {QUESTIONS.map((q) => (
-          <Chip key={q.id} active={asked.some((a) => a.q === q.th)} onClick={() => ask(q)}>
-            {q.th}
+          <Chip key={q.id} active={asked.some((a) => a.id === q.id)} onClick={() => ask(q)}>
+            {t(q.th, q.en)}
           </Chip>
         ))}
       </div>
@@ -98,7 +98,9 @@ export default function WhoIsIt() {
         <div className="space-y-1.5 rounded-2xl bg-surface p-4 border-[1.5px] border-edge">
           {asked.map((a, i) => (
             <p key={i} className="flex items-center justify-between text-sm">
-              <span className="text-ink-700">{a.q}</span>
+              <span className="text-ink-700">
+                {t(QUESTIONS.find((x) => x.id === a.id).th, QUESTIONS.find((x) => x.id === a.id).en)}
+              </span>
               <span className={`font-extrabold ${a.yes ? 'text-sage-ink' : 'text-clay-ink'}`}>
                 {a.yes ? t('ใช่ ✓', 'Yes ✓') : t('ไม่ใช่ ✗', 'No ✗')}
               </span>

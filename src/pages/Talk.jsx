@@ -6,10 +6,11 @@ import { TALK_BLOCKS, TALK_SCENES } from '../data/talk'
 import { useApp } from '../store/AppContext'
 
 export default function Talk() {
-  const { t, progress } = useApp()
+  const { t, tx, progress } = useApp()
   return (
     <>
       <PageHeader
+        art="chat"
         eyebrow={t('ภาษาอังกฤษ', 'English')}
         title={t('คุยอังกฤษกับลูกวันนี้', 'Daily English')}
         lead={t(
@@ -37,7 +38,7 @@ export default function Talk() {
                   >
                     <span className="text-2xl">{s.emoji}</span>
                     <span className="min-w-0 flex-1">
-                      <span className="block truncate text-sm font-bold text-ink-900">{s.th}</span>
+                      <span className="block truncate text-sm font-bold text-ink-900">{t(s.th, s.en)}</span>
                       <span className="block truncate text-[11px] text-ink-500">
                         {s.lines.length} {t('ประโยค', 'lines')}
                       </span>

@@ -36,7 +36,7 @@ function Segments({ label, icon, options, value, onChange }) {
 }
 
 export default function Play() {
-  const { t, sfx } = useApp()
+  const { t, tx, sfx } = useApp()
   const [params] = useSearchParams()
 
   const [mins, setMins] = useState(Number(params.get('mins')) || 15)
@@ -61,6 +61,7 @@ export default function Play() {
   return (
     <>
       <PageHeader
+        art="clock"
         eyebrow={t('ตัวช่วยเลือก', 'Mixer')}
         title={t('ว่างกี่นาที เดี๋ยวเราจัดให้', 'Tell us the minutes, we’ll do the rest')}
         lead={t(
@@ -146,9 +147,9 @@ export default function Play() {
                         </span>
                       </span>
                       <span className="mt-2 block font-display text-[17px] font-bold leading-snug text-ink-900">
-                        {a.th}
+                        {t(a.th, a.en)}
                       </span>
-                      <span className="mt-1 block text-sm leading-relaxed text-ink-500">{a.needTh}</span>
+                      <span className="mt-1 block text-sm leading-relaxed text-ink-500">{tx(a, 'need')}</span>
                     </span>
                   </Paper>
                 )

@@ -8,7 +8,7 @@ import { useApp } from '../store/AppContext'
 
 export default function StoryReader() {
   const { id } = useParams()
-  const { t, sfx, addStars, markDone, progress } = useApp()
+  const { t, tx, sfx, addStars, markDone, progress } = useApp()
   const s = storyById(id)
   const [page, setPage] = useState(0)
   const [done, setDone] = useState(false)
@@ -16,7 +16,8 @@ export default function StoryReader() {
   if (!s) return <Navigate to="/stories" replace />
 
   const tn = tint(s.tone)
-  const last = page === s.pages.length - 1
+  const pages = tx(s, 'pages')
+  const last = page === pages.length - 1
   const alreadyRead = !!progress[`story:${s.id}`]
 
   const next = () => {
@@ -34,7 +35,7 @@ export default function StoryReader() {
   if (done) {
     return (
       <>
-        <PageHeader title={s.th} to="/stories" />
+        <PageHeader title={t(s.th, s.en)} to="/stories" />
         <div className="mx-auto w-full max-w-[620px] space-y-5 pb-8 pt-4 text-center">
           <div className="animate-pop text-7xl">{s.emoji}</div>
           <h2 className="text-2xl font-extrabold text-ink-900">
@@ -46,7 +47,7 @@ export default function StoryReader() {
             <p className="flex items-center gap-1.5 text-sm font-bold text-brand-700">
               <Icon name="chat" size={15} /> {t('ชวนลูกคุยต่อ', 'Talk about it')}
             </p>
-            {s.talkTh.map((q) => (
+            {tx(s, 'talk').map((q) => (
               <p key={q} className="rounded-2xl bg-brand-50 px-4 py-3 text-sm leading-relaxed text-ink-700">
                 “{q}”
               </p>
@@ -75,12 +76,12 @@ export default function StoryReader() {
 
   return (
     <>
-      <PageHeader title={s.th} to="/stories" />
+      <PageHeader title={t(s.th, s.en)} to="/stories" />
       <div className="flex min-h-[70dvh] flex-col gap-4 pb-8">
         <div className="flex items-center gap-3">
-          <Progress value={page + 1} max={s.pages.length} className="flex-1" />
+          <Progress value={page + 1} max={pages.length} className="flex-1" />
           <span className="shrink-0 text-xs font-bold tabular-nums text-ink-500">
-            {page + 1}/{s.pages.length}
+            {page + 1}/{pages.length}
           </span>
         </div>
 
@@ -91,7 +92,7 @@ export default function StoryReader() {
             {s.emoji}
           </span>
           <p key={`p${page}`} className="animate-rise text-[17px] font-medium leading-[2] text-ink-900">
-            {s.pages[page]}
+            {pages[page]}
           </p>
         </div>
 

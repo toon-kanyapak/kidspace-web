@@ -10,7 +10,7 @@ import { scrollScreenTop } from '../lib/scroll'
 
 export default function ReadingLesson() {
   const { id } = useParams()
-  const { t, sfx, addStars, markDone, progress, speak } = useApp()
+  const { t, tx, lang, sfx, addStars, markDone, progress, speak } = useApp()
   const r = readingById(id)
 
   const [stage, setStage] = useState('read') // read | quiz | done
@@ -20,7 +20,9 @@ export default function ReadingLesson() {
 
   if (!r) return <Navigate to="/reading" replace />
   const lv = READING_LEVELS.find((l) => l.id === r.level)
-  const q = r.qs[qi]
+  const qs = tx(r, 'qs')
+  const text = tx(r, 'text')
+  const q = qs[qi]
 
   const restart = () => {
     setStage('read')
@@ -36,7 +38,7 @@ export default function ReadingLesson() {
     sfx(ok ? 'good' : 'wrong')
     if (ok) setScore((s) => s + 1)
     setTimeout(() => {
-      if (qi + 1 >= r.qs.length) {
+      if (qi + 1 >= qs.length) {
         const key = `reading:${r.id}`
         if (!progress[key]) addStars(3)
         markDone(key, true)
@@ -51,14 +53,14 @@ export default function ReadingLesson() {
   }
 
   if (stage === 'done') {
-    const pct = score / r.qs.length
+    const pct = score / qs.length
     return (
       <>
-        <PageHeader title={r.th} to="/reading" />
+        <PageHeader title={t(r.th, r.en) ?? r.th} to="/reading" />
         <WinScreen
           emoji={r.emoji}
           title={pct === 1 ? t('ตอบถูกหมดเลย!', 'All correct!') : t('เก่งมาก!', 'Nice work!')}
-          subtitle={t(`ตอบถูก ${score} จาก ${r.qs.length} ข้อ`, `${score} of ${r.qs.length} correct`)}
+          subtitle={t(`ตอบถูก ${score} จาก ${qs.length} ข้อ`, `${score} of ${qs.length} correct`)}
           stars={pct === 1 ? 3 : pct >= 0.6 ? 2 : 1}
           onAgain={restart}
           backTo="/reading"
@@ -70,20 +72,20 @@ export default function ReadingLesson() {
 
   return (
     <>
-      <PageHeader title={r.th} to="/reading" />
+      <PageHeader title={t(r.th, r.en) ?? r.th} to="/reading" />
       <div className="mx-auto w-full max-w-[640px] space-y-4 pb-8">
         <span className="inline-flex items-center gap-1.5 rounded-full bg-brand-100 px-3 py-1 text-xs font-bold text-brand-700">
-          {lv.th} · {lv.age}
+          {t(lv.th, lv.en)} · {tx(lv, 'age')}
         </span>
 
         <Card className="space-y-3 p-5">
           <div className="flex items-start gap-3">
             <span className="text-4xl">{r.emoji}</span>
-            <p className="flex-1 text-[16px] leading-[2] text-ink-900">{r.text}</p>
+            <p className="flex-1 text-[16px] leading-[2] text-ink-900">{text}</p>
           </div>
           <button
             type="button"
-            onClick={() => speak(r.text, { lang: 'th-TH' })}
+            onClick={() => speak(text, { lang: lang === 'en' ? 'en-US' : 'th-TH' })}
             className="press inline-flex items-center gap-1.5 text-sm font-bold text-brand-600"
           >
             <Icon name="volume" size={15} /> {t('อ่านให้ฟัง', 'Read aloud')}
@@ -105,9 +107,9 @@ export default function ReadingLesson() {
         ) : (
           <>
             <div className="flex items-center gap-3">
-              <Progress value={qi + 1} max={r.qs.length} className="flex-1" />
+              <Progress value={qi + 1} max={qs.length} className="flex-1" />
               <span className="shrink-0 text-xs font-bold tabular-nums text-ink-500">
-                {qi + 1}/{r.qs.length}
+                {qi + 1}/{qs.length}
               </span>
             </div>
             <Card key={qi} className="animate-rise space-y-3 p-5">

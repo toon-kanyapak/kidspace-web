@@ -6,10 +6,11 @@ import { BRAIN_GROUPS } from '../data/catalog'
 import { useApp } from '../store/AppContext'
 
 export default function Brain() {
-  const { t } = useApp()
+  const { t, tx } = useApp()
   return (
     <>
       <PageHeader
+        art="brain"
         eyebrow={t('ฝึกคิด', 'Thinking')}
         title={t('ยิมสมอง', 'Brain gym')}
         lead={t(
@@ -24,7 +25,7 @@ export default function Brain() {
             <section key={grp.id} className="space-y-3">
               <h2 className="flex items-center gap-2 text-[17px] font-bold text-ink-900">
                 <span className={`grid size-8 place-items-center rounded-xl ${tn.bg}`}>{grp.emoji}</span>
-                {grp.th}
+                {t(grp.th, grp.en)}
               </h2>
               <div className="grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
                 {grp.games.map((g) => (
@@ -39,8 +40,8 @@ export default function Brain() {
                       {g.emoji}
                     </span>
                     <span className="min-w-0 flex-1">
-                      <span className="block font-bold text-ink-900">{g.th}</span>
-                      <span className="block text-xs text-ink-500">{g.subTh}</span>
+                      <span className="block font-bold text-ink-900">{t(g.th, g.en)}</span>
+                      <span className="block text-xs text-ink-500">{tx(g, 'sub')}</span>
                     </span>
                     <Icon name="arrowRight" size={17} className="shrink-0 text-brand-300" />
                   </Link>

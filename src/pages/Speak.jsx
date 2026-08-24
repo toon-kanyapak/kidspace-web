@@ -6,12 +6,13 @@ import { SPEAK_LESSONS, SPEAK_LEVELS } from '../data/speak'
 import { useApp } from '../store/AppContext'
 
 export default function Speak() {
-  const { t, progress } = useApp()
+  const { t, lang, progress } = useApp()
   const hasMic = typeof window !== 'undefined' && (window.SpeechRecognition || window.webkitSpeechRecognition)
 
   return (
     <>
       <PageHeader
+        art="mic"
         eyebrow={t('ภาษาอังกฤษ', 'English')}
         title={t('ซ้อมพูดอังกฤษ', 'Speaking practice')}
         lead={t(
@@ -59,8 +60,8 @@ export default function Speak() {
                   {l.emoji}
                 </span>
                 <span className="min-w-0 flex-1">
-                  <span className="block truncate font-extrabold text-ink-900">{l.th}</span>
-                  <span className="block truncate text-xs text-ink-500">{l.en}</span>
+                  <span className="block truncate font-extrabold text-ink-900">{t(l.th, l.en)}</span>
+                  <span className="block truncate text-xs text-ink-500">{lang === 'en' ? l.th : l.en}</span>
                   <span className="mt-1.5 flex items-center gap-2">
                     <span className="rounded-full bg-brand-50 px-2.5 py-0.5 text-[11px] font-semibold text-brand-700">
                       {l.lines.length} {t('ประโยค', 'lines')}

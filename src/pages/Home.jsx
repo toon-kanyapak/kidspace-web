@@ -1,6 +1,7 @@
 import { useMemo, useState } from 'react'
 import { Link, useNavigate } from 'react-router-dom'
 import Icon from '../components/Icon'
+import Scene from '../components/Scene'
 import { Badge, Button, Paper, SectionTitle, Shelf, Sticker, Stars, tint } from '../components/ui'
 import { ACTIVITIES } from '../data/activities'
 import { ARTICLES, catOf } from '../data/articles'
@@ -19,6 +20,7 @@ function moodOf(hour) {
       en: 'This morning',
       tone: 'butter',
       lineTh: 'เริ่มวันด้วยอะไรเบา ๆ ก่อนออกจากบ้าน',
+      lineEn: 'Something gentle before you head out',
     }
   if (hour < 16)
     return {
@@ -28,6 +30,7 @@ function moodOf(hour) {
       en: 'This afternoon',
       tone: 'sage',
       lineTh: 'มีแรงเหลือ พาลูกขยับตัวสักหน่อย',
+      lineEn: 'Energy to spare — get them moving',
     }
   if (hour < 20)
     return {
@@ -37,6 +40,7 @@ function moodOf(hour) {
       en: 'This evening',
       tone: 'clay',
       lineTh: 'ช่วงที่ทุกคนกลับมาเจอกัน',
+      lineEn: 'The part of the day everyone comes back together',
     }
   return {
     id: 'night',
@@ -45,13 +49,17 @@ function moodOf(hour) {
     en: 'Tonight',
     tone: 'lilac',
     lineTh: 'ค่อย ๆ ลดความเร็วลงก่อนเข้านอน',
+    lineEn: 'Time to slow everything down before bed',
   }
 }
+
+/* the pinned suggestion borrows the scene that matches its category */
+const PICK_SCENE = { play: 'blocks', meal: 'blocks', learn: 'abc', sleep: 'moon' }
 
 const MOOD_CAT = { morning: 'learn', midday: 'play', evening: 'meal', night: 'sleep' }
 
 export default function Home() {
-  const { t, stars, progress } = useApp()
+  const { t, tx, stars, progress } = useApp()
   const navigate = useNavigate()
   const [mins, setMins] = useState(null)
 
@@ -84,7 +92,9 @@ export default function Home() {
               <br />
               {t('ก็เป็นวันที่ดีของลูกได้', 'can be your child’s best bit')}
             </h1>
-            <p className="mt-2.5 max-w-[42ch] text-[15px] leading-relaxed text-ink-700">{mood.lineTh}</p>
+            <p className="mt-2.5 max-w-[42ch] text-[15px] leading-relaxed text-ink-700">
+              {t(mood.lineTh, mood.lineEn)}
+            </p>
 
             <div className="mt-6">
               <p className="mb-2 text-xs font-bold text-ink-500">
@@ -126,14 +136,16 @@ export default function Home() {
                 ~{pick.mins} {t('นาที', 'min')}
               </span>
             </div>
-            <h2 className="mt-3 font-display text-xl font-bold leading-snug text-ink-900">{pick.th}</h2>
-            <p className="mt-1.5 text-sm leading-relaxed text-ink-500">{pick.needTh}</p>
+            <h2 className="mt-3 font-display text-xl font-bold leading-snug text-ink-900">
+              {t(pick.th, pick.en)}
+            </h2>
+            <p className="mt-1.5 text-sm leading-relaxed text-ink-500">{tx(pick, 'need')}</p>
             <p className="mt-3 border-l-[3px] border-brand-200 pl-3 text-[13px] leading-relaxed text-ink-500">
-              {pick.whyTh}
+              {tx(pick, 'why')}
             </p>
           </div>
           <div className="mt-5 flex items-end justify-between gap-3">
-            <Sticker tone={pick.tone} icon={pick.icon} size="lg" className="tilt-l" />
+            <Scene name={PICK_SCENE[pick.cat] ?? 'blocks'} className="-mb-2 w-32 shrink-0" />
             <Button as={Link} to={`/activities/${pick.id}`} variant="soft" size="sm">
               {t('ลองดู', 'Try it')} <Icon name="arrowRight" size={14} />
             </Button>
@@ -155,8 +167,8 @@ export default function Home() {
             className="press flex w-[210px] shrink-0 snap-start flex-col gap-2.5 p-4"
           >
             <Sticker tone={a.tone} icon={a.icon} />
-            <span className="font-display font-bold leading-snug text-ink-900">{a.th}</span>
-            <span className="line-clamp-2 text-xs leading-snug text-ink-500">{a.needTh}</span>
+            <span className="font-display font-bold leading-snug text-ink-900">{t(a.th, a.en)}</span>
+            <span className="line-clamp-2 text-xs leading-snug text-ink-500">{tx(a, 'need')}</span>
             <span className="mt-auto pt-2 text-[11px] font-bold text-brand-600">
               ~{a.mins} {t('นาที', 'min')}
             </span>
@@ -179,7 +191,7 @@ export default function Home() {
                   <span className="min-w-0 flex-1">
                     <Badge tone={c.tone}>{t(c.th, c.en)}</Badge>
                     <span className="mt-1.5 block font-display font-bold leading-snug text-ink-900">
-                      {a.th}
+                      {t(a.th, a.en)}
                     </span>
                     <span className="mt-1 block text-xs text-ink-500">
                       {t(`อ่าน ${a.read} นาที`, `${a.read} min read`)}
@@ -205,8 +217,8 @@ export default function Home() {
               >
                 <Sticker tone={s.tone} emoji={s.emoji} />
                 <span className="min-w-0 flex-1">
-                  <span className="block truncate font-display font-bold text-ink-900">{s.th}</span>
-                  <span className="block truncate text-xs text-ink-500">{s.subTh}</span>
+                  <span className="block truncate font-display font-bold text-ink-900">{t(s.th, s.en)}</span>
+                  <span className="block truncate text-xs text-ink-500">{tx(s, 'sub')}</span>
                 </span>
                 <span className="shrink-0 text-[11px] font-bold text-ink-300">
                   {s.read} {t('นาที', 'min')}
@@ -227,8 +239,8 @@ export default function Home() {
             className="press flex w-[168px] shrink-0 snap-start flex-col items-start gap-2 p-4"
           >
             <Sticker tone={g.tone} emoji={g.emoji} size="lg" className="tilt-r" />
-            <span className="font-display text-sm font-bold leading-snug text-ink-900">{g.th}</span>
-            <span className="text-[11px] text-ink-500">{g.age}</span>
+            <span className="font-display text-sm font-bold leading-snug text-ink-900">{t(g.th, g.en)}</span>
+            <span className="text-[11px] text-ink-500">{tx(g, 'age')}</span>
           </Paper>
         ))}
       </Shelf>

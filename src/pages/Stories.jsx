@@ -6,10 +6,11 @@ import { tint } from '../components/ui'
 import { useApp } from '../store/AppContext'
 
 export default function Stories() {
-  const { t, progress } = useApp()
+  const { t, tx, progress } = useApp()
   return (
     <>
       <PageHeader
+        art="moon"
         eyebrow={t('ก่อนนอน', 'Bedtime')}
         title={t('นิทานก่อนนอน', 'Bedtime stories')}
         lead={t(
@@ -33,12 +34,12 @@ export default function Stories() {
                 </span>
                 <span className="min-w-0 flex-1">
                   <span className="flex items-center gap-1.5">
-                    <span className="truncate font-extrabold text-ink-900">{s.th}</span>
+                    <span className="truncate font-extrabold text-ink-900">{t(s.th, s.en)}</span>
                     {read && <Icon name="check" size={14} className="shrink-0 text-brand-500" />}
                   </span>
-                  <span className="mt-0.5 block truncate text-sm text-ink-500">{s.subTh}</span>
+                  <span className="mt-0.5 block truncate text-sm text-ink-500">{tx(s, 'sub')}</span>
                   <span className="mt-2 inline-block rounded-full bg-brand-50 px-2.5 py-0.5 text-[11px] font-semibold text-brand-700">
-                    {t(`อ่าน ${s.read} นาที`, `${s.read} min`)} · {s.age}
+                    {t(`อ่าน ${s.read} นาที`, `${s.read} min`)} · {tx(s, 'age')}
                   </span>
                 </span>
                 <Icon name="arrowRight" size={18} className="shrink-0 text-brand-300" />

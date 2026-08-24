@@ -14,7 +14,7 @@ function fmt(sec) {
 
 export default function ActivityDetail() {
   const { id } = useParams()
-  const { t, sfx, addStars, markDone, progress, favorites, toggleFavorite } = useApp()
+  const { t, tx, sfx, addStars, markDone, progress, favorites, toggleFavorite } = useApp()
   const a = activityById(id)
 
   const [left, setLeft] = useState(a ? a.mins * 60 : 0)
@@ -60,7 +60,7 @@ export default function ActivityDetail() {
   return (
     <>
       <PageHeader
-        title={a.th}
+        title={t(a.th, a.en)}
         to="/activities"
         right={
           <button
@@ -88,7 +88,7 @@ export default function ActivityDetail() {
         </div>
 
         <div className="flex flex-wrap items-center gap-2">
-          <Badge tone={a.tone}>{cat?.th}</Badge>
+          <Badge tone={a.tone}>{t(cat?.th, cat?.en)}</Badge>
           <Badge tone="sky">
             <Icon name="clock" size={11} /> ~{a.mins} {t('นาที', 'min')}
           </Badge>
@@ -104,7 +104,7 @@ export default function ActivityDetail() {
 
         <Card className="p-4">
           <p className="text-sm font-bold text-ink-700">{t('ต้องเตรียมอะไรบ้าง', 'What you need')}</p>
-          <p className="mt-1 text-sm text-ink-500">{a.needTh}</p>
+          <p className="mt-1 text-sm text-ink-500">{tx(a, 'need')}</p>
         </Card>
 
         {/* Timer */}
@@ -148,7 +148,7 @@ export default function ActivityDetail() {
         {/* Steps */}
         <section className="space-y-2.5">
           <h2 className="text-[17px] font-bold text-ink-900">{t('ทำยังไง', 'How to play')}</h2>
-          {a.stepsTh.map((step, i) => {
+          {tx(a, 'steps').map((step, i) => {
             const on = checked.includes(i)
             return (
               <button
@@ -183,7 +183,7 @@ export default function ActivityDetail() {
           <p className="flex items-center gap-1.5 text-sm font-bold text-brand-700">
             <Icon name="bulb" size={15} /> {t('ทำไมกิจกรรมนี้ถึงดี', 'Why it works')}
           </p>
-          <p className="mt-1.5 text-sm leading-relaxed text-ink-700">{a.whyTh}</p>
+          <p className="mt-1.5 text-sm leading-relaxed text-ink-700">{tx(a, 'why')}</p>
         </Card>
 
         <Button size="lg" onClick={finish}>

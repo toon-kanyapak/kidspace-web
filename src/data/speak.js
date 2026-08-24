@@ -1,9 +1,33 @@
 /** English speaking practice — 7 lessons, each with 4 progressive levels. */
 export const SPEAK_LEVELS = [
-  { id: 1, th: 'ฟังแล้วพูดตาม', en: 'Listen & repeat', hintTh: 'กดฟัง แล้วพูดตามช้า ๆ' },
-  { id: 2, th: 'พูดพร้อมข้อความ', en: 'Say it with text', hintTh: 'อ่านประโยคออกเสียงพร้อมกัน' },
-  { id: 3, th: 'เติมคำที่หาย', en: 'Fill the gap', hintTh: 'มีคำหายไป ลองพูดให้ครบ' },
-  { id: 4, th: 'พูดเอง', en: 'Say it yourself', hintTh: 'ดูคำแปลไทย แล้วพูดอังกฤษเอง' },
+  {
+    id: 1,
+    th: 'ฟังแล้วพูดตาม',
+    en: 'Listen & repeat',
+    hintTh: 'กดฟัง แล้วพูดตามช้า ๆ',
+    hintEn: 'Tap listen, then repeat slowly',
+  },
+  {
+    id: 2,
+    th: 'พูดพร้อมข้อความ',
+    en: 'Say it with text',
+    hintTh: 'อ่านประโยคออกเสียงพร้อมกัน',
+    hintEn: 'Read the sentence aloud together',
+  },
+  {
+    id: 3,
+    th: 'เติมคำที่หาย',
+    en: 'Fill the gap',
+    hintTh: 'มีคำหายไป ลองพูดให้ครบ',
+    hintEn: 'A word is missing — say the whole line',
+  },
+  {
+    id: 4,
+    th: 'พูดเอง',
+    en: 'Say it yourself',
+    hintTh: 'ดูคำแปลไทย แล้วพูดอังกฤษเอง',
+    hintEn: 'Read the Thai, then say it in English',
+  },
 ]
 
 export const SPEAK_LESSONS = [

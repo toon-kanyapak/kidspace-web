@@ -31,12 +31,12 @@ export default function TalkScene() {
 
   return (
     <>
-      <PageHeader title={scene.th} to="/talk/daily" />
+      <PageHeader title={t(scene.th, scene.en)} to="/talk/daily" />
       <div className="mx-auto w-full max-w-[680px] space-y-4 pb-8">
         <Card className={`flex items-center gap-3.5 ${tn.bg} p-5`}>
           <span className="text-4xl">{scene.emoji}</span>
           <span>
-            <span className="block text-lg font-extrabold text-ink-900">{scene.th}</span>
+            <span className="block text-lg font-extrabold text-ink-900">{t(scene.th, scene.en)}</span>
             <span className="block text-sm text-ink-500">
               {scene.en} · {t(block?.th, block?.en)}
             </span>

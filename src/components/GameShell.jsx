@@ -1,6 +1,7 @@
 import { Link } from 'react-router-dom'
 import Icon from './Icon'
 import { PageHeader } from './Shell'
+import Scene from './Scene'
 import { Button, Paper, Stars } from './ui'
 import { useApp } from '../store/AppContext'
 
@@ -56,11 +57,11 @@ export default function GameShell({ title, backTo, hint, score, best, level, chi
   )
 }
 
-export function WinScreen({ emoji = '🎉', title, subtitle, stars = 3, onAgain, backTo, backLabel }) {
+export function WinScreen({ emoji = '🎉', scene, title, subtitle, stars = 3, onAgain, backTo, backLabel }) {
   const { t } = useApp()
   return (
     <Paper lift className="tape animate-pop relative mx-auto max-w-[420px] space-y-4 p-8 text-center">
-      <div className="text-6xl">{emoji}</div>
+      {scene ? <Scene name={scene} className="mx-auto w-40" /> : <div className="text-6xl">{emoji}</div>}
       <h2 className="font-display text-2xl font-bold text-ink-900">{title}</h2>
       {subtitle && <p className="text-sm text-ink-500">{subtitle}</p>}
       <div className="flex justify-center">

@@ -7,10 +7,10 @@ import { load, save } from '../lib/storage'
 import { useApp } from '../store/AppContext'
 
 const TOPICS = [
-  { id: 'idea', emoji: '💡', th: 'อยากให้มีอะไรเพิ่ม' },
-  { id: 'bug', emoji: '🐛', th: 'เจอปัญหาการใช้งาน' },
-  { id: 'content', emoji: '📝', th: 'ความเห็นเรื่องเนื้อหา' },
-  { id: 'love', emoji: '💗', th: 'อยากชม / ให้กำลังใจ' },
+  { id: 'idea', emoji: '💡', th: 'อยากให้มีอะไรเพิ่ม', en: 'Something I’d like added' },
+  { id: 'bug', emoji: '🐛', th: 'เจอปัญหาการใช้งาน', en: 'I hit a problem' },
+  { id: 'content', emoji: '📝', th: 'ความเห็นเรื่องเนื้อหา', en: 'Feedback on the content' },
+  { id: 'love', emoji: '💗', th: 'อยากชม / ให้กำลังใจ', en: 'Just saying thanks' },
 ]
 
 export default function Feedback() {
@@ -93,7 +93,7 @@ export default function Feedback() {
                     : 'bg-surface text-ink-900 border-edge'
                 }`}
               >
-                <span className="text-lg">{tp.emoji}</span> {tp.th}
+                <span className="text-lg">{tp.emoji}</span> {t(tp.th, tp.en)}
               </button>
             ))}
           </div>

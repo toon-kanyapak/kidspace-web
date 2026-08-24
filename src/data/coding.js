@@ -6,9 +6,36 @@
  */
 
 export const WORLDS = [
-  { id: 'yard', th: 'สวนหลังบ้าน', emoji: '🌳', tone: 'mint', wall: '🌳', goal: '🏠', floor: '#eaf6ee' },
-  { id: 'beach', th: 'ชายหาด', emoji: '🏖️', tone: 'butter', wall: '🌴', goal: '⛵', floor: '#fff6e0' },
-  { id: 'space', th: 'อวกาศ', emoji: '🌌', tone: 'lilac', wall: '☄️', goal: '🛸', floor: '#f3ecfd' },
+  {
+    id: 'yard',
+    th: 'สวนหลังบ้าน',
+    en: 'Back garden',
+    emoji: '🌳',
+    tone: 'mint',
+    wall: '🌳',
+    goal: '🏠',
+    floor: '#eaf6ee',
+  },
+  {
+    id: 'beach',
+    th: 'ชายหาด',
+    en: 'The beach',
+    emoji: '🏖️',
+    tone: 'butter',
+    wall: '🌴',
+    goal: '⛵',
+    floor: '#fff6e0',
+  },
+  {
+    id: 'space',
+    th: 'อวกาศ',
+    en: 'Outer space',
+    emoji: '🌌',
+    tone: 'lilac',
+    wall: '☄️',
+    goal: '🛸',
+    floor: '#f3ecfd',
+  },
 ]
 
 /* Small deterministic PRNG so a level always looks the same. */

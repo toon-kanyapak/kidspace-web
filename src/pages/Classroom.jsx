@@ -6,10 +6,11 @@ import { CLASSROOM_TOOLS } from '../data/catalog'
 import { useApp } from '../store/AppContext'
 
 export default function Classroom() {
-  const { t } = useApp()
+  const { t, tx } = useApp()
   return (
     <>
       <PageHeader
+        art="board"
         eyebrow={t('สร้างสรรค์', 'Make')}
         title={t('สื่อการสอน', 'Classroom')}
         lead={t(
@@ -31,8 +32,8 @@ export default function Classroom() {
                   {c.emoji}
                 </span>
                 <span className="min-w-0 flex-1">
-                  <span className="block font-extrabold text-ink-900">{c.th}</span>
-                  <span className="block text-xs text-ink-500">{c.subTh}</span>
+                  <span className="block font-extrabold text-ink-900">{t(c.th, c.en)}</span>
+                  <span className="block text-xs text-ink-500">{tx(c, 'sub')}</span>
                 </span>
                 <Icon name="arrowRight" size={18} className="shrink-0 text-brand-300" />
               </Link>

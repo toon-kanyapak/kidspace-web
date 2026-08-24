@@ -32,7 +32,7 @@ function withGaps(sentence) {
 
 export default function SpeakLesson() {
   const { id } = useParams()
-  const { t, speak, sfx, markDone, addStars, progress, rate } = useApp()
+  const { t, tx, speak, sfx, markDone, addStars, progress, rate } = useApp()
   const lesson = speakLessonById(id)
 
   const [level, setLevel] = useState(1)
@@ -120,7 +120,7 @@ export default function SpeakLesson() {
 
   return (
     <>
-      <PageHeader title={lesson.th} to="/speak" />
+      <PageHeader title={t(lesson.th, lesson.en)} to="/speak" />
       <div className="mx-auto w-full max-w-[620px] space-y-4 pb-8">
         <div className="no-scrollbar bleed flex gap-2 overflow-x-auto">
           {SPEAK_LEVELS.map((lv) => (
@@ -139,7 +139,7 @@ export default function SpeakLesson() {
         </div>
 
         <p className="text-center text-sm font-semibold text-ink-500">
-          {t(SPEAK_LEVELS[level - 1].hintTh, SPEAK_LEVELS[level - 1].hintTh)}
+          {tx(SPEAK_LEVELS[level - 1], 'hint')}
         </p>
 
         <div className="flex items-center gap-3">

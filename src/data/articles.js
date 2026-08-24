@@ -19,13 +19,23 @@ export const ARTICLES = [
     th: 'ลูกอาละวาดกลางห้าง รับมือยังไงไม่ให้เครียดทั้งคู่',
     en: 'Tantrums in public: how to handle them without losing it',
     excerptTh: 'สิ่งที่เกิดขึ้นในสมองลูกตอนอาละวาด และ 4 ขั้นที่ใช้ได้จริงหน้างาน',
-    body: p(
+    excerptEn:
+      'What is happening in your child’s brain during a meltdown, and four steps that actually work in the moment',
+    bodyTh: p(
       'เวลาลูกลงไปนอนดิ้นกลางห้าง สิ่งที่กำลังเกิดขึ้นไม่ใช่การ "ดื้อ" แต่คือสมองส่วนอารมณ์ทำงานแรงกว่าสมองส่วนคิด เด็กวัย 2–5 ปียังควบคุมตัวเองได้จำกัดมาก การสั่งให้ "หยุดเดี๋ยวนี้" จึงมักไม่ได้ผล เพราะส่วนที่จะรับคำสั่งกำลังออฟไลน์อยู่',
       '**ขั้นที่ 1 — ลดผู้ชม** พาลูกออกจากจุดที่คนเยอะก่อน ไม่ใช่เพื่อหนีสายตาคนอื่น แต่เพราะเสียงและแสงกำลังทำให้ระบบประสาทลูกล้นกว่าเดิม',
       '**ขั้นที่ 2 — ลดคำพูด** ใช้ประโยคสั้น ๆ ซ้ำ ๆ เช่น "แม่อยู่ตรงนี้" การอธิบายยาว ๆ ตอนนี้จะกลายเป็นเสียงรบกวน',
       '**ขั้นที่ 3 — ตั้งชื่อความรู้สึก** "หนูอยากได้มาก แล้วไม่ได้ เลยโกรธใช่ไหม" การถูกเข้าใจทำให้พายุสงบเร็วกว่าการถูกสั่ง',
       '**ขั้นที่ 4 — คุยทีหลัง** รอจนลูกสงบแล้วค่อยตกลงกติกาใหม่ ตอนที่สมองส่วนคิดกลับมาทำงานแล้ว ลูกถึงจะจำได้จริง',
       'สุดท้าย ให้เผื่อใจไว้ว่าการอาละวาดเป็นเรื่องปกติของวัยนี้ ไม่ได้แปลว่าคุณเลี้ยงลูกผิด',
+    ),
+    bodyEn: p(
+      'When your child goes down on the floor in the middle of a shop, what is happening is not defiance — it is the emotional part of the brain running harder than the thinking part. Children aged two to five have very limited self-control. Telling them to “stop right now” usually fails, because the part that would take the instruction is offline.',
+      '**Step 1 — Reduce the audience.** Move your child away from the crowd first. Not to escape other people’s stares, but because the noise and light are overloading their nervous system.',
+      '**Step 2 — Reduce your words.** Use one short sentence, repeated: “I’m right here.” A long explanation right now is just more noise.',
+      '**Step 3 — Name the feeling.** “You really wanted it and you can’t have it, so you’re angry — is that right?” Being understood settles the storm faster than being ordered.',
+      '**Step 4 — Talk afterwards.** Wait until your child is calm before agreeing new rules. Only once the thinking brain is back online will any of it stick.',
+      'Finally, hold on to this: tantrums are normal at this age. They do not mean you are getting it wrong.',
     ),
   },
   {
@@ -35,13 +45,22 @@ export const ARTICLES = [
     th: 'ลูกขี้อาย เข้าสังคมยาก ช่วยลูกยังไงไม่กดดัน',
     en: 'The shy child: helping without pushing',
     excerptTh: 'ความขี้อายไม่ใช่ข้อบกพร่อง แต่เป็นสไตล์ — ช่วยอย่างไรให้ลูกอุ่นเครื่องเองได้',
-    body: p(
+    excerptEn: 'Shyness is not a fault, it is a style — how to help without pushing',
+    bodyTh: p(
       'เด็กบางคนต้องการเวลาอุ่นเครื่องก่อนเข้ากลุ่ม นั่นเป็นลักษณะพื้นฐานของอารมณ์ (temperament) ไม่ใช่ปัญหาที่ต้องรีบแก้ การผลักให้ "ไปทักเขาสิ" มักทำให้ลูกยิ่งถอย',
       '**ให้เวลาสังเกตก่อน** พาไปถึงก่อนเวลา ให้ลูกได้ดูสถานที่ตอนคนยังน้อย ความคุ้นเคยลดความกลัวได้มากกว่าคำปลอบ',
       '**เริ่มจากกลุ่มเล็ก** เพื่อนหนึ่งคนที่บ้าน ดีกว่างานปาร์ตี้สิบคน ทักษะสังคมสร้างได้เร็วกว่าในวงเล็ก',
       '**อย่าติดป้าย** เลี่ยงการพูดต่อหน้าลูกว่า "เขาขี้อายน่ะ" เพราะลูกจะรับคำนั้นมาเป็นคำอธิบายตัวเอง',
       '**ชมความพยายาม ไม่ใช่ผลลัพธ์** "เมื่อกี้หนูโบกมือทักเอง แม่เห็นนะ" มีค่ากว่าคำว่า "เก่งมาก" ลอย ๆ',
       'ถ้าความกลัวรุนแรงจนกระทบการเรียนหรือการกิน การปรึกษาผู้เชี่ยวชาญเป็นทางเลือกที่ดี ไม่ใช่ความล้มเหลว',
+    ),
+    bodyEn: p(
+      'Some children need time to warm up before joining a group. That is temperament, not a problem to be fixed quickly. Pushing them to “go and say hello” usually makes them retreat further.',
+      '**Let them watch first.** Arrive early so your child can take in the room while it is still quiet. Familiarity reduces fear far more effectively than reassurance does.',
+      '**Start with small groups.** One friend at your house beats a party of ten. Social skills build much faster in a small circle.',
+      '**Don’t hand them a label.** Avoid saying “oh, he’s shy” in front of your child — they will take that word and use it to explain themselves.',
+      '**Praise the effort, not the outcome.** “You waved hello all by yourself — I saw that” is worth far more than a vague “well done”.',
+      'If the fear becomes severe enough to affect school or eating, seeing a specialist is a good option, not a failure.',
     ),
   },
   {
@@ -51,13 +70,22 @@ export const ARTICLES = [
     th: 'เตรียมลูกคนโตรับน้องใหม่ ไม่ให้อิจฉาน้อง',
     en: 'Getting the older child ready for a new baby',
     excerptTh: 'สิ่งที่ควรทำก่อนคลอด ระหว่างอยู่โรงพยาบาล และเดือนแรกที่บ้าน',
-    body: p(
+    excerptEn: 'What to do before the birth, during the hospital stay, and through the first month home',
+    bodyTh: p(
       'ความอิจฉาน้องเป็นเรื่องธรรมชาติ ลูกคนโตกำลังเจอการเปลี่ยนแปลงครั้งใหญ่ที่ตัวเองไม่ได้เลือก',
       '**ก่อนคลอด** เล่าตามจริงว่าน้องจะร้อง จะกินนมบ่อย และยังเล่นด้วยไม่ได้ในตอนแรก การคาดหวังตรงกับความจริงช่วยลดความผิดหวัง',
       '**อย่าเปลี่ยนหลายอย่างพร้อมกัน** เลี่ยงการย้ายห้อง เลิกขวดนม หรือเริ่มโรงเรียนในเดือนเดียวกับที่น้องเกิด',
       '**ให้บทบาทที่ทำได้จริง** หยิบผ้าอ้อม เลือกเสื้อให้น้อง ร้องเพลงกล่อม เด็กที่รู้สึกว่าตัวเองมีที่ทางจะต่อต้านน้อยลง',
       '**เวลา 10 นาทีที่เป็นของเขาคนเดียว** ทุกวัน โดยไม่มีน้องแทรก มีพลังมากกว่าของขวัญชิ้นใหญ่',
       'ถ้าลูกถอยกลับไปทำตัวเหมือนเด็กเล็ก เช่น อยากดูดขวดอีก ให้มองว่าเป็นการขอความมั่นใจ ไม่ใช่การถอยหลัง',
+    ),
+    bodyEn: p(
+      'Jealousy of a new baby is natural. Your older child is facing a huge change they did not choose.',
+      '**Before the birth.** Tell them honestly that the baby will cry, will feed constantly, and will not be able to play with them at first. Expectations that match reality reduce the disappointment.',
+      '**Don’t change several things at once.** Avoid moving rooms, dropping the bottle, or starting school in the same month the baby arrives.',
+      '**Give them a real job.** Fetching a nappy, choosing the baby’s outfit, singing a lullaby. A child who feels they have a place pushes back less.',
+      '**Ten minutes that belong to them alone,** every day, with no baby interrupting, is more powerful than any big present.',
+      'If your child regresses — wanting a bottle again, for instance — read it as a request for reassurance, not as going backwards.',
     ),
   },
   {
@@ -67,12 +95,20 @@ export const ARTICLES = [
     th: 'สอนลูกช่วยงานบ้าน โดยไม่ต้องบ่นทุกวัน',
     en: 'Getting kids to help at home without nagging',
     excerptTh: 'เริ่มจากงานที่ลูกทำสำเร็จได้ แล้วค่อย ๆ ขยับ',
-    body: p(
+    excerptEn: 'Start with jobs your child can actually finish, then build from there',
+    bodyTh: p(
       'งานบ้านไม่ใช่แค่การแบ่งเบา แต่เป็นการบอกลูกว่า "เธอเป็นส่วนหนึ่งของบ้านนี้"',
       '**เลือกงานให้ตรงวัย** 2–3 ขวบ เก็บของเล่นใส่กล่อง · 4–5 ขวบ จัดโต๊ะ รดน้ำต้นไม้ · 6 ขวบขึ้นไป พับผ้า เทขยะ',
       '**ทำพร้อมกันก่อน แล้วค่อยปล่อย** เด็กเรียนจากการทำเคียงข้าง ไม่ใช่จากคำสั่งข้ามห้อง',
       '**อย่าซ่อมงานต่อหน้าลูก** ถ้าพับผ้าไม่เรียบแล้วเราไปพับใหม่ทันที ลูกจะเรียนว่าทำไปก็ไม่มีความหมาย',
       '**ใช้ตารางภาพแทนคำเตือน** ให้ภาพเป็นคนเตือน แทนที่จะเป็นเสียงพ่อแม่ ความสัมพันธ์จะดีขึ้นเยอะ',
+    ),
+    bodyEn: p(
+      'Chores are not really about lightening your load. They tell your child: you are part of this household.',
+      '**Match the job to the age.** Two to three: toys into the box. Four to five: laying the table, watering plants. Six and up: folding laundry, taking out the bin.',
+      '**Do it alongside them first, then step back.** Children learn from working next to you, not from an instruction shouted across the room.',
+      '**Don’t redo their work in front of them.** If you refold the laundry the moment they finish, they learn that doing it made no difference.',
+      '**Use a picture chart instead of reminders.** Let the chart do the nagging rather than your voice — your relationship will be noticeably better for it.',
     ),
   },
   {
@@ -82,12 +118,20 @@ export const ARTICLES = [
     th: 'ลูกกินยาก เลือกกิน ทำยังไงให้โต๊ะอาหารไม่เป็นสนามรบ',
     en: 'Picky eating: keeping the table calm',
     excerptTh: 'หน้าที่พ่อแม่คือ "อะไร เมื่อไหร่ ที่ไหน" หน้าที่ลูกคือ "เท่าไหร่ และจะกินไหม"',
-    body: p(
+    excerptEn: 'Your job is what, when and where. Their job is whether, and how much',
+    bodyTh: p(
       'หลักที่ใช้ได้ดีคือการแบ่งหน้าที่: พ่อแม่ตัดสินใจว่าจะเสิร์ฟอะไร เวลาไหน ที่ไหน ส่วนลูกตัดสินใจว่าจะกินไหมและกินเท่าไหร่',
       '**เสิร์ฟของใหม่คู่กับของที่ลูกกินอยู่แล้ว** วางไว้เฉย ๆ ไม่ต้องเชียร์ เด็กบางคนต้องเห็นอาหารชนิดหนึ่ง 10–15 ครั้งก่อนจะกล้าลอง',
       '**เลี่ยงการต่อรองและรางวัล** "กินผักแล้วได้ขนม" ทำให้ผักกลายเป็นงานและขนมกลายเป็นรางวัลใหญ่ขึ้น',
       '**จำกัดเวลามื้อไว้ราว 20–30 นาที** แล้วเก็บโดยไม่ดุ ความหิวในมื้อถัดไปเป็นครูที่ดีกว่าการบังคับ',
       '**ให้ลูกมีส่วนร่วม** ล้างผัก เลือกผลไม้ในตลาด จัดจาน เด็กมักกล้ากินสิ่งที่ตัวเองมีส่วนทำ',
+    ),
+    bodyEn: p(
+      'The principle that works well is a division of responsibility: you decide what is served, when, and where. Your child decides whether to eat and how much.',
+      '**Serve something new alongside something they already eat.** Just put it there — no cheerleading. Some children need to see a food ten to fifteen times before they will risk it.',
+      '**Avoid bargaining and rewards.** “Eat your vegetables and you can have pudding” turns vegetables into work and pudding into an even bigger prize.',
+      '**Cap the meal at about twenty to thirty minutes,** then clear it away without telling them off. Hunger at the next meal is a better teacher than being forced.',
+      '**Get them involved.** Washing vegetables, choosing fruit at the market, arranging the plate. Children are usually braver about food they helped make.',
     ),
   },
   {
@@ -97,12 +141,20 @@ export const ARTICLES = [
     th: 'เวลาคุณภาพสำคัญกว่าปริมาณ — และนั่นเป็นข่าวดีของพ่อแม่ที่ยุ่ง',
     en: 'Quality beats quantity — good news for busy parents',
     excerptTh: '10 นาทีที่อยู่กับลูกจริง ๆ มีค่ากว่า 2 ชั่วโมงที่อยู่ด้วยกันแต่ไม่ได้อยู่ด้วยกัน',
-    body: p(
+    excerptEn: 'Ten real minutes beats two hours of being in the same room but not really there',
+    bodyTh: p(
       'พ่อแม่จำนวนมากรู้สึกผิดที่ให้เวลาลูกน้อย แต่งานวิจัยเรื่องความผูกพันชี้ว่า คุณภาพของการตอบสนองสำคัญกว่าจำนวนชั่วโมง',
       '**ทำ 10 นาทีให้เต็ม 10 นาที** วางมือถือไว้อีกห้อง ให้ลูกเป็นคนเลือกว่าจะเล่นอะไร',
       '**ตามลูก อย่านำลูก** ในช่วงเวลานี้ไม่ต้องสอน ไม่ต้องแก้ ให้เล่าสิ่งที่เห็น เช่น "หนูเอาบล็อกสีแดงวางบนสุดเลยนะ"',
       '**ใส่ไว้ในจังหวะที่มีอยู่แล้ว** ระหว่างอาบน้ำ ระหว่างเดินกลับจากโรงเรียน ไม่ต้องรอวันหยุด',
       '**สม่ำเสมอชนะยิ่งใหญ่** ทุกวันวันละนิด สร้างความมั่นคงได้มากกว่าทริปใหญ่ปีละครั้ง',
+    ),
+    bodyEn: p(
+      'A lot of parents feel guilty about how little time they give their children. But the research on attachment points to the quality of your responses mattering more than the number of hours.',
+      '**Make the ten minutes actually ten minutes.** Phone in another room. Let your child decide what you do.',
+      '**Follow, don’t lead.** During this window there is nothing to teach and nothing to correct. Just describe what you see: “You put the red block right on top.”',
+      '**Fit it into a rhythm you already have.** During the bath, on the walk home from school. You don’t have to wait for the weekend.',
+      '**Consistent beats grand.** A little every day builds more security than one big trip a year.',
     ),
   },
   {
@@ -112,12 +164,20 @@ export const ARTICLES = [
     th: 'จอกับเด็กเล็ก ใช้ยังไงให้ไม่ต้องรู้สึกผิด',
     en: 'Screens and small kids, without the guilt',
     excerptTh: 'ไม่ใช่แค่กี่นาที แต่คือดูอะไร ดูกับใคร และดูแทนอะไร',
-    body: p(
+    excerptEn: 'It is not only how many minutes — it is what, with whom, and instead of what',
+    bodyTh: p(
       'คำถามที่ดีกว่า "วันละกี่นาที" คือ "จอกำลังแทนที่อะไรอยู่" ถ้ามันแทนการนอน การเล่นอิสระ หรือการคุยกัน นั่นคือจุดที่ต้องปรับ',
       '**ดูด้วยกันเมื่อทำได้** การพูดคุยระหว่างดูเปลี่ยนการรับสื่อเฉย ๆ ให้เป็นการเรียนรู้',
       '**เลือกเนื้อหาที่จังหวะช้า** รายการที่ตัดภาพเร็วมากทำให้เด็กเล็กจดจ่อกับสิ่งอื่นได้ยากขึ้นหลังปิดจอ',
       '**ตั้งเขตปลอดจอ** โต๊ะอาหารและห้องนอน สองจุดนี้ให้ผลชัดที่สุด',
       '**บอกล่วงหน้าก่อนปิด** "อีก 2 ตอนแล้วปิดนะ" ลดการต่อรองได้มากกว่าการปิดกะทันหัน',
+    ),
+    bodyEn: p(
+      'A better question than “how many minutes a day?” is “what is the screen replacing?” If it is replacing sleep, free play, or conversation, that is the point to adjust.',
+      '**Watch together when you can.** Talking while you watch turns passive consumption into learning.',
+      '**Choose slower-paced content.** Shows that cut between shots very rapidly make it harder for young children to settle afterwards.',
+      '**Set screen-free zones.** The dinner table and the bedroom are the two that make the clearest difference.',
+      '**Give warning before switching off.** “Two more episodes, then we stop” cuts down negotiation far more than an abrupt end.',
     ),
   },
   {
@@ -127,12 +187,20 @@ export const ARTICLES = [
     th: 'สร้างรูทีนก่อนนอนที่ลูกยอมทำตาม',
     en: 'A bedtime routine your child will actually follow',
     excerptTh: 'ลำดับเดิมทุกคืน คือสัญญาณที่ร่างกายลูกอ่านออก',
-    body: p(
+    excerptEn: 'The same order every night is a signal your child’s body learns to read',
+    bodyTh: p(
       'ร่างกายเด็กเรียนรู้จากลำดับ ไม่ใช่จากนาฬิกา รูทีนที่ทำซ้ำเดิมทุกคืนจะกลายเป็นสัญญาณว่าถึงเวลานอน',
       '**เลือก 4 อย่างแล้วทำเรียงเดิม** เช่น อาบน้ำ → แปรงฟัน → นิทาน 1 เรื่อง → ปิดไฟกอด',
       '**ลดแสงลง 30 นาทีก่อนนอน** แสงจ้าทำให้ร่างกายเลื่อนเวลาง่วงออกไป',
       '**ใช้ภาพตารางแทนคำสั่ง** ให้ลูกเป็นคนชี้ว่าขั้นต่อไปคืออะไร',
       '**เผื่อการยื้อไว้ในแผน** ตอบคำถามสุดท้ายได้ 1 คำถาม แล้วบอกว่า "ที่เหลือเก็บไว้พรุ่งนี้เช้านะ"',
+    ),
+    bodyEn: p(
+      'A child’s body learns from sequence, not from the clock. A routine repeated in the same order each night becomes the signal that sleep is coming.',
+      '**Pick four things and always do them in the same order.** For example: bath → teeth → one story → lights out and a cuddle.',
+      '**Dim the lights thirty minutes before bed.** Bright light pushes the body’s sleepiness later.',
+      '**Use a picture chart instead of instructions.** Let your child be the one who points at what comes next.',
+      '**Build the stalling into the plan.** Allow one final question, then say “we’ll save the rest for the morning”.',
     ),
   },
   {
@@ -142,12 +210,20 @@ export const ARTICLES = [
     th: 'ชมลูกยังไงให้ลูกกล้าลองของยาก',
     en: 'Praise that builds courage, not fragility',
     excerptTh: 'ชมกระบวนการ ไม่ใช่ชมว่าเก่ง',
-    body: p(
+    excerptEn: 'Praise the process, not the talent',
+    bodyTh: p(
       'คำชมแบบ "หนูเก่งมาก" ฟังดูดี แต่ถ้าใช้บ่อยเกินไป เด็กอาจเลี่ยงงานยากเพราะกลัวว่าจะไม่เก่งอีกต่อไป',
       '**ชมสิ่งที่ลูกทำ** "หนูลองใหม่ถึงสามรอบเลยนะ" ทำให้ลูกเห็นว่าความพยายามคือสิ่งที่เปลี่ยนผลลัพธ์',
       '**บรรยายแทนตัดสิน** "แม่เห็นหนูแบ่งบล็อกให้น้อง" ชัดเจนกว่า "เป็นเด็กดีจัง"',
       '**ยอมรับความผิดหวังก่อนให้กำลังใจ** "มันยากจริง ๆ ใช่ไหม" ก่อนจะบอกว่า "ลองอีกทีไหม"',
       '**ให้ลูกเห็นเราล้มเหลวบ้าง** พูดออกมาดัง ๆ ว่า "อันนี้พ่อทำพลาด เดี๋ยวลองใหม่" เป็นบทเรียนที่แรงกว่าคำสอน',
+    ),
+    bodyEn: p(
+      'Praise like “you’re so clever” sounds good, but used too often children start avoiding hard tasks, afraid of no longer being clever.',
+      '**Praise what they did.** “You tried that three times” shows your child that effort is the thing that changes the outcome.',
+      '**Describe rather than judge.** “I saw you share your blocks with your brother” is far clearer than “good boy”.',
+      '**Acknowledge the disappointment before the encouragement.** “That was genuinely hard, wasn’t it?” before “shall we try again?”',
+      '**Let them see you fail sometimes.** Saying out loud “I got that wrong, let me try again” teaches more than any lecture.',
     ),
   },
   {
@@ -157,13 +233,22 @@ export const ARTICLES = [
     th: 'ลูกตี ผลัก กัด ทำยังไงดี',
     en: 'When your child hits, pushes, or bites',
     excerptTh: 'หยุดพฤติกรรมก่อน แล้วค่อยสอนทักษะที่ยังไม่มี',
-    body: p(
+    excerptEn: 'Stop the behaviour first, then teach the skill that is missing',
+    bodyTh: p(
       'เด็กเล็กตีเพราะยังไม่มีคำพูดพอจะบอกความรู้สึก ไม่ใช่เพราะนิสัยไม่ดี',
       '**หยุดทันทีและสั้น** จับมือเบา ๆ แล้วบอก "หยุด ตีทำให้เจ็บ" ประโยคเดียวพอ',
       '**ดูแลคนที่ถูกทำก่อน** การให้ความสนใจกับผู้ถูกกระทำสอนเรื่องผลลัพธ์ได้ดีกว่าการดุยาว ๆ',
       '**สอนคำแทนการตี** "โกรธให้พูดว่า หยุด" แล้วซ้อมกันตอนอารมณ์ปกติ',
       '**ดูต้นเหตุ** หิว ง่วง หรือคนเยอะเกินไป มักเป็นตัวจุดชนวนที่แก้ได้ล่วงหน้า',
       'ถ้าเกิดถี่ขึ้นเรื่อย ๆ หลัง 4 ขวบ หรือทำให้ตัวเองบาดเจ็บ ควรปรึกษาผู้เชี่ยวชาญ',
+    ),
+    bodyEn: p(
+      'Young children hit because they do not yet have the words for the feeling — not because there is something wrong with their character.',
+      '**Stop it immediately and briefly.** Take their hand gently and say “Stop. Hitting hurts.” One sentence is enough.',
+      '**Attend to the person who was hurt first.** Giving your attention to the one on the receiving end teaches consequences better than a long telling-off.',
+      '**Teach words in place of hitting.** “When you’re angry, say stop” — and rehearse it when everyone is calm.',
+      '**Look for the trigger.** Hunger, tiredness, or too many people are usually the spark, and those can be headed off in advance.',
+      'If it becomes more frequent after age four, or your child hurts themselves, it is worth seeking specialist advice.',
     ),
   },
   {
@@ -173,12 +258,20 @@ export const ARTICLES = [
     th: 'ทำให้ลูกพูดเก่งขึ้น ด้วยของที่มีอยู่แล้วในบ้าน',
     en: 'Boosting your child’s language with what you already have',
     excerptTh: 'พูดกับลูกให้มากกว่าพูดใส่ลูก',
-    body: p(
+    excerptEn: 'Talk with your child more than you talk at them',
+    bodyTh: p(
       'จำนวนคำที่เด็กได้ยินก่อน 3 ขวบสัมพันธ์กับคลังคำของเขาในภายหลัง แต่สิ่งที่สำคัญกว่าคือ "การผลัดกัน"',
       '**บรรยายสิ่งที่ทำอยู่** "แม่กำลังหั่นแครอท มันแข็งนะ" ระหว่างทำครัวก็เป็นบทเรียนภาษาได้',
       '**รอ 5 วินาที** หลังถามคำถาม เด็กต้องการเวลาประมวลผลนานกว่าที่เราคิด',
       '**ต่อยอดประโยคลูก** ลูกพูดว่า "รถ" เราต่อว่า "รถสีแดงคันใหญ่เลยนะ"',
       '**อ่านหนังสือแบบมีคำถาม** ถามว่า "คิดว่าเขาจะทำอะไรต่อ" มากกว่าอ่านรวดเดียวจบ',
+    ),
+    bodyEn: p(
+      'The number of words a child hears before age three is linked to their vocabulary later. But what matters even more is taking turns.',
+      '**Narrate what you are doing.** “I’m chopping the carrot — it’s hard, isn’t it?” Cooking can be a language lesson.',
+      '**Wait five seconds** after asking a question. Children need longer to process than we assume.',
+      '**Extend what they say.** Your child says “car” — you say “a big red car, isn’t it?”',
+      '**Read with questions.** Asking “what do you think happens next?” beats reading straight through to the end.',
     ),
   },
   {
@@ -188,13 +281,22 @@ export const ARTICLES = [
     th: 'เหนื่อยจนไม่อยากเป็นพ่อแม่ในบางวัน — เรื่องที่ไม่ค่อยมีใครพูด',
     en: 'Parental burnout: the part nobody talks about',
     excerptTh: 'สัญญาณที่ควรสังเกต และสิ่งเล็ก ๆ ที่ช่วยได้จริง',
-    body: p(
+    excerptEn: 'The signs worth noticing, and the small things that genuinely help',
+    bodyTh: p(
       'ความเหนื่อยล้าของพ่อแม่ไม่ใช่ความอ่อนแอ และการยอมรับมันคือขั้นแรกของการดูแลทั้งตัวเองและลูก',
       '**สัญญาณ** หงุดหงิดง่ายผิดปกติ รู้สึกห่างเหินจากลูก นอนไม่พอสะสม และรู้สึกว่าทำเท่าไหร่ก็ไม่พอ',
       '**ลดมาตรฐานบางเรื่องอย่างตั้งใจ** บ้านรกได้ในสัปดาห์ที่งานหนัก การเลือกว่าจะปล่อยอะไรคือทักษะ ไม่ใช่ความล้มเหลว',
       '**ขอความช่วยเหลือให้เจาะจง** "ช่วยรับลูกวันพุธได้ไหม" ได้ผลกว่า "ช่วยหน่อย"',
       '**คืนพลังด้วยหน่วยเล็ก** 15 นาทีที่เป็นของตัวเองทุกวัน ดีกว่ารอวันหยุดยาวที่อาจไม่มาถึง',
       'ถ้าความรู้สึกหมดพลังอยู่นานเป็นเดือนหรือมีความคิดทำร้ายตัวเอง ควรปรึกษาผู้เชี่ยวชาญด้านสุขภาพจิต',
+    ),
+    bodyEn: p(
+      'Parental exhaustion is not weakness, and admitting it is the first step in looking after both yourself and your child.',
+      '**The signs.** Unusually short temper, feeling distant from your child, accumulated lack of sleep, and a sense that nothing you do is ever enough.',
+      '**Deliberately lower some standards.** The house can be a mess in a heavy work week. Choosing what to let go is a skill, not a failure.',
+      '**Ask for specific help.** “Could you collect her on Wednesday?” works far better than “I need help”.',
+      '**Recharge in small units.** Fifteen minutes that belong to you every day beats waiting for a long holiday that may never come.',
+      'If the depletion lasts for months, or you have thoughts of harming yourself, please speak to a mental health professional.',
     ),
   },
   {
@@ -204,12 +306,20 @@ export const ARTICLES = [
     th: 'ลูกไม่ยอมแบ่งของ ผิดปกติไหม',
     en: 'My child won’t share — is that normal?',
     excerptTh: 'ก่อน 3 ขวบ การหวงของคือพัฒนาการปกติ',
-    body: p(
+    excerptEn: 'Before age three, not wanting to share is normal development',
+    bodyTh: p(
       'การแบ่งปันต้องใช้ความเข้าใจว่าคนอื่นมีความรู้สึก ซึ่งเป็นทักษะที่ค่อย ๆ โตขึ้นราว 3–4 ขวบ',
       '**ใช้การผลัดกันแทนการแบ่ง** "ให้เขาเล่นจนกว่าจะพอ แล้วถึงตาหนู" ชัดเจนและยุติธรรมในสายตาเด็ก',
       '**เก็บของชิ้นพิเศษไว้ก่อนเพื่อนมา** ไม่ใช่ทุกอย่างต้องแบ่ง ผู้ใหญ่เองก็มีของที่ไม่ให้ใครยืม',
       '**ชมตอนที่เกิดขึ้นเอง** "หนูส่งตุ๊กตาให้เพื่อนเอง เพื่อนยิ้มเลย"',
       '**อย่าบังคับให้ขอโทษทันที** ให้ช่วยกันแก้ไข เช่น เอาผ้ามาเช็ด หรือช่วยต่อของที่พัง มีความหมายกว่าคำขอโทษที่ถูกบังคับ',
+    ),
+    bodyEn: p(
+      'Sharing requires understanding that other people have feelings, and that grows gradually at around three to four years old.',
+      '**Use turn-taking instead of sharing.** “He plays until he’s finished, then it’s your turn” is clear and feels fair to a child.',
+      '**Put the special things away before friends arrive.** Not everything has to be shared. Adults have things they don’t lend either.',
+      '**Praise it when it happens by itself.** “You handed the doll to your friend and she smiled.”',
+      '**Don’t force an immediate apology.** Helping to fix it — fetching a cloth, rebuilding what broke — means more than a sorry that was demanded.',
     ),
   },
   {
@@ -219,12 +329,20 @@ export const ARTICLES = [
     th: 'ฝึกเข้าห้องน้ำ เริ่มเมื่อไหร่และเริ่มยังไง',
     en: 'Toilet training: when and how to start',
     excerptTh: 'ดูสัญญาณความพร้อม ไม่ใช่ดูอายุ',
-    body: p(
+    excerptEn: 'Watch for readiness signs, not the calendar',
+    bodyTh: p(
       'ความพร้อมสำคัญกว่าอายุ เด็กส่วนใหญ่พร้อมช่วง 18 เดือน – 3 ขวบ แต่ต่างกันได้มาก',
       '**สัญญาณความพร้อม** ผ้าอ้อมแห้งนานขึ้น บอกได้ว่าปวด สนใจตามผู้ใหญ่เข้าห้องน้ำ และถอดกางเกงเองได้',
       '**เริ่มในช่วงที่บ้านนิ่ง** เลี่ยงช่วงย้ายบ้าน มีน้องใหม่ หรือเปลี่ยนโรงเรียน',
       '**ตั้งเวลาแทนการถาม** พาไปนั่งหลังตื่นและหลังอาหาร แทนที่จะถามว่า "ปวดไหม" ซึ่งมักได้คำตอบว่าไม่',
       '**ปฏิกิริยาตอนพลาดสำคัญที่สุด** "ไม่เป็นไร เดี๋ยวเราเช็ดด้วยกัน" การดุทำให้กระบวนการยืดออกไป',
+    ),
+    bodyEn: p(
+      'Readiness matters more than age. Most children are ready somewhere between eighteen months and three years, but the range is wide.',
+      '**Signs of readiness.** Nappies staying dry longer, telling you they need to go, interest in following adults to the toilet, and being able to pull their own trousers down.',
+      '**Start during a settled stretch at home.** Avoid moving house, a new baby, or changing school.',
+      '**Use a schedule rather than a question.** Take them after waking and after meals, instead of asking “do you need a wee?” — which usually gets a no.',
+      '**Your reaction to accidents matters most.** “That’s alright, let’s clean it up together.” Telling them off stretches the whole process out.',
     ),
   },
   {
@@ -234,12 +352,20 @@ export const ARTICLES = [
     th: 'เมื่อพ่อแม่เลี้ยงลูกคนละบ้าน ทำยังไงให้ลูกมั่นคง',
     en: 'Co-parenting across two homes',
     excerptTh: 'ความสม่ำเสมอของกติกา สำคัญกว่าความเหมือนของบ้าน',
-    body: p(
+    excerptEn: 'Consistent rules matter more than identical homes',
+    bodyTh: p(
       'เด็กปรับตัวกับสองบ้านได้ ถ้าสิ่งที่คาดเดาได้มีมากพอ',
       '**ตกลงกติกาหลักไม่กี่ข้อ** เวลานอน การบ้าน และการใช้จอ ให้ตรงกัน ที่เหลือปล่อยให้แต่ละบ้านมีสไตล์ของตัวเองได้',
       '**อย่าใช้ลูกเป็นคนส่งสาร** สื่อสารกันโดยตรง แม้จะเป็นข้อความสั้น ๆ',
       '**พูดถึงอีกฝ่ายอย่างเป็นกลางต่อหน้าลูก** ลูกรับรู้ว่าตัวเองเป็นส่วนหนึ่งของทั้งสองคน',
       '**ทำปฏิทินภาพ** ให้ลูกเห็นล่วงหน้าว่าคืนไหนอยู่บ้านไหน ลดความกังวลได้มาก',
+    ),
+    bodyEn: p(
+      'Children adapt to two homes perfectly well, as long as there is enough that is predictable.',
+      '**Agree on a handful of core rules.** Bedtime, homework and screens should match. Beyond that, each home can have its own style.',
+      '**Don’t use your child as the messenger.** Communicate directly, even if it is only short messages.',
+      '**Speak neutrally about the other parent in front of your child.** They know they are part of both of you.',
+      '**Make a picture calendar.** Seeing in advance which nights are where takes away a great deal of worry.',
     ),
   },
   {
@@ -249,12 +375,20 @@ export const ARTICLES = [
     th: 'สร้างนิสัยรักการอ่าน ตั้งแต่ยังอ่านไม่ออก',
     en: 'Building a reading habit before they can read',
     excerptTh: 'เป้าหมายคือทำให้หนังสือเท่ากับความอบอุ่น',
-    body: p(
+    excerptEn: 'The goal is to make books mean warmth',
+    bodyTh: p(
       'เด็กที่โตมากับหนังสือในมือพ่อแม่ มักเชื่อมโยงการอ่านกับความรู้สึกดี ซึ่งเป็นแรงจูงใจที่ยั่งยืนกว่าการฝึกอ่าน',
       '**ให้ลูกเลือกเล่มเอง** แม้จะเป็นเล่มเดิมทุกคืน การอ่านซ้ำช่วยสร้างภาษาและความมั่นใจ',
       '**อ่านไม่ต้องจบก็ได้** ถ้าลูกอยากคุยเรื่องหน้าที่สามนานสิบนาที นั่นคือการอ่านที่ดี',
       '**ให้หนังสือเข้าถึงง่าย** วางในระดับสายตาลูก ไม่ใช่บนชั้นสูง',
       '**ให้ลูกเห็นเราอ่าน** สิ่งที่เด็กเลียนแบบคือสิ่งที่เห็น ไม่ใช่สิ่งที่ถูกบอก',
+    ),
+    bodyEn: p(
+      'Children who grow up with books in their parents’ hands tend to associate reading with feeling good — a far more durable motivation than reading drills.',
+      '**Let them choose the book.** Even if it is the same one every night. Rereading builds language and confidence.',
+      '**You don’t have to finish.** If your child wants to talk about page three for ten minutes, that is good reading.',
+      '**Keep books within reach.** At your child’s eye level, not on a high shelf.',
+      '**Let them see you read.** Children copy what they see, not what they are told.',
     ),
   },
 ]

@@ -7,7 +7,7 @@ const AppCtx = createContext(null)
 const RATE_MAP = { verySlow: 0.55, slow: 0.75, normal: 1, fast: 1.3 }
 
 export function AppProvider({ children }) {
-  const [lang, setLang] = useState(() => load('lang', 'th'))
+  const [lang, setLang] = useState(() => load('lang', 'en'))
   const [sound, setSound] = useState(() => load('sound', true))
   const [rateKey, setRateKey] = useState(() => load('rateKey', 'normal'))
   const [voiceURI, setVoiceURI] = useState(() => load('voiceURI', ''))
@@ -52,7 +52,7 @@ export function AppProvider({ children }) {
 
   const resetAll = useCallback(() => {
     clearAll()
-    setLang('th')
+    setLang('en')
     setSound(true)
     setRateKey('normal')
     setVoiceURI('')
@@ -63,11 +63,27 @@ export function AppProvider({ children }) {
 
   const t = useCallback((th, en) => (lang === 'en' ? (en ?? th) : th), [lang])
 
+  /**
+   * Resolves a bilingual pair on a data object: tx(activity, 'need') reads
+   * `needEn` in English and `needTh` in Thai, falling back to Thai if a
+   * translation is missing so nothing ever renders blank.
+   */
+  const tx = useCallback(
+    (obj, base) => {
+      if (!obj) return undefined
+      const th = obj[`${base}Th`]
+      const en = obj[`${base}En`]
+      return lang === 'en' ? (en ?? th) : (th ?? en)
+    },
+    [lang],
+  )
+
   const value = useMemo(
     () => ({
       lang,
       setLang,
       t,
+      tx,
       sound,
       setSound,
       rateKey,
@@ -88,6 +104,7 @@ export function AppProvider({ children }) {
     [
       lang,
       t,
+      tx,
       sound,
       rateKey,
       voiceURI,

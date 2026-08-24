@@ -21,7 +21,7 @@ function AxisBar({ label, value, hint }) {
 }
 
 export default function Quiz() {
-  const { t, sfx, addStars, markDone, progress } = useApp()
+  const { t, tx, sfx, addStars, markDone, progress } = useApp()
   const [stage, setStage] = useState('intro') // intro | run | result
   const [i, setI] = useState(0)
   const [answers, setAnswers] = useState({})
@@ -103,7 +103,7 @@ export default function Quiz() {
           </div>
 
           <Card key={i} className="animate-rise p-6">
-            <p className="text-[19px] font-extrabold leading-relaxed text-ink-900">{q.th}</p>
+            <p className="text-[19px] font-extrabold leading-relaxed text-ink-900">{t(q.th, q.en)}</p>
           </Card>
 
           <div className="space-y-2.5">
@@ -149,11 +149,11 @@ export default function Quiz() {
       <div className="space-y-4 pb-8">
         <Card className={`animate-pop ${tn.bg} p-7 text-center`}>
           <span className="text-6xl">{result.emoji}</span>
-          <h2 className="mt-3 text-2xl font-extrabold text-ink-900">{result.th}</h2>
+          <h2 className="mt-3 text-2xl font-extrabold text-ink-900">{t(result.th, result.en)}</h2>
           <p className="mt-1 text-sm font-semibold text-ink-500">
-            {result.en} · {result.tagTh}
+            {result.en} · {tx(result, 'tag')}
           </p>
-          <p className="mt-3 text-sm leading-relaxed text-ink-700">{result.summaryTh}</p>
+          <p className="mt-3 text-sm leading-relaxed text-ink-700">{tx(result, 'summary')}</p>
         </Card>
 
         <Card className="space-y-4 p-5">
@@ -173,7 +173,7 @@ export default function Quiz() {
           <p className="flex items-center gap-1.5 font-bold text-ink-900">
             <Icon name="trophy" size={16} className="text-brand-500" /> {t('จุดแข็งของคุณ', 'Your strengths')}
           </p>
-          {result.strengthsTh.map((s) => (
+          {tx(result, 'strengths').map((s) => (
             <p key={s} className="flex items-start gap-2 text-sm leading-relaxed text-ink-700">
               <Icon name="check" size={15} className="mt-0.5 shrink-0 text-brand-500" /> {s}
             </p>
@@ -184,7 +184,7 @@ export default function Quiz() {
           <p className="flex items-center gap-1.5 font-bold text-ink-900">
             <Icon name="bulb" size={16} className="text-brand-500" /> {t('ลองเติมสิ่งนี้ดู', 'Things to try')}
           </p>
-          {result.tipsTh.map((s) => (
+          {tx(result, 'tips').map((s) => (
             <p key={s} className="flex items-start gap-2 text-sm leading-relaxed text-ink-700">
               <Icon name="sparkle" size={15} className="mt-0.5 shrink-0 text-brand-400" /> {s}
             </p>

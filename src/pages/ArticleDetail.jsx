@@ -25,7 +25,7 @@ function Para({ text }) {
 
 export default function ArticleDetail() {
   const { id } = useParams()
-  const { t, favorites, toggleFavorite, sfx } = useApp()
+  const { t, tx, favorites, toggleFavorite, sfx } = useApp()
   const a = articleById(id)
   if (!a) return <Navigate to="/articles" replace />
 
@@ -56,15 +56,15 @@ export default function ArticleDetail() {
       <article className="mx-auto w-full max-w-[720px] space-y-4 pb-8">
         <div>
           <Badge tone={c.tone}>{t(c.th, c.en)}</Badge>
-          <h1 className="mt-2.5 text-[23px] font-extrabold leading-snug text-ink-900">{a.th}</h1>
-          <p className="mt-2 text-sm leading-relaxed text-ink-500">{a.excerptTh}</p>
+          <h1 className="mt-2.5 text-[23px] font-extrabold leading-snug text-ink-900">{t(a.th, a.en)}</h1>
+          <p className="mt-2 text-sm leading-relaxed text-ink-500">{tx(a, 'excerpt')}</p>
           <p className="mt-2.5 inline-flex items-center gap-1 text-xs font-semibold text-ink-500">
             <Icon name="clock" size={12} /> {t(`อ่าน ${a.read} นาที`, `${a.read} min read`)}
           </p>
         </div>
 
         <div className="space-y-3.5 border-t border-brand-100 pt-4">
-          {a.body.map((para, i) => (
+          {tx(a, 'body').map((para, i) => (
             <Para key={i} text={para} />
           ))}
         </div>
@@ -89,7 +89,7 @@ export default function ArticleDetail() {
                 to={`/articles/${m.id}`}
                 className="press block rounded-2xl bg-surface p-4 border-[1.5px] border-edge"
               >
-                <p className="font-bold leading-snug text-ink-900">{m.th}</p>
+                <p className="font-bold leading-snug text-ink-900">{t(m.th, m.en)}</p>
                 <p className="mt-1 text-xs text-ink-500">{t(`อ่าน ${m.read} นาที`, `${m.read} min read`)}</p>
               </Link>
             ))}

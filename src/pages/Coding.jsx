@@ -157,7 +157,7 @@ export default function Coding() {
               }}
             >
               <span className="mr-1">{wd.emoji}</span>
-              {wd.th}
+              {t(wd.th, wd.en)}
             </Chip>
           ))}
         </div>

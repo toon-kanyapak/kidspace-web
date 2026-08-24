@@ -6,10 +6,11 @@ import { VERSUS_GAMES } from '../data/catalog'
 import { useApp } from '../store/AppContext'
 
 export default function Versus() {
-  const { t } = useApp()
+  const { t, tx } = useApp()
   return (
     <>
       <PageHeader
+        art="versus"
         eyebrow={t('ทำด้วยกัน', 'Together')}
         title={t('เล่นด้วยกัน', 'Play together')}
         lead={t(
@@ -28,10 +29,10 @@ export default function Versus() {
                 className={`press flex flex-col gap-2 rounded-3xl ${tn.bg} p-4 border-[1.5px] ${tn.ring}`}
               >
                 <span className="text-3xl">{g.emoji}</span>
-                <span className="font-extrabold leading-snug text-ink-900">{g.th}</span>
-                <span className="text-xs leading-snug text-ink-500">{g.subTh}</span>
+                <span className="font-extrabold leading-snug text-ink-900">{t(g.th, g.en)}</span>
+                <span className="text-xs leading-snug text-ink-500">{tx(g, 'sub')}</span>
                 <span className="mt-auto inline-flex items-center gap-1 pt-1.5 text-[11px] font-bold text-ink-700">
-                  <Icon name="user" size={11} /> {g.players}
+                  <Icon name="user" size={11} /> {tx(g, 'players')}
                 </span>
               </Link>
             )
